@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Elaine Shadowing Studio">
+  <rect width="512" height="512" rx="112" fill="#0f766e"/>
+  <circle cx="256" cy="202" r="96" fill="#f7f2ea"/>
+  <path d="M132 334c42-54 206-54 248 0v58H132z" fill="#f7f2ea"/>
+  <path d="M340 154c38 22 64 58 64 102s-26 80-64 102" fill="none" stroke="#fbbf24" stroke-width="32" stroke-linecap="round"/>
+  <path d="M378 104c58 38 96 92 96 152s-38 114-96 152" fill="none" stroke="#38bdf8" stroke-width="28" stroke-linecap="round"/>
+</svg>

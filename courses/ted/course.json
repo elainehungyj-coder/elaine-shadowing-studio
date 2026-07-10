@@ -1,0 +1,46 @@
+{
+  "id": "ted",
+  "title": "TED Ideas",
+  "description": "Presentation-style English with clear logic and emphasis.",
+  "sentences": [
+    {
+      "id": "ted-001",
+      "english": "Every meaningful change begins with a question we are brave enough to ask.",
+      "chinese": "每一次有意义的改变，都始于一个我们足够勇敢去提出的问题。",
+      "startTime": 0,
+      "endTime": 6.3,
+      "audioPath": "",
+      "tags": ["speech", "idea"],
+      "vocabulary": [
+        { "word": "meaningful", "meaning": "有意义的" },
+        { "word": "brave", "meaning": "勇敢的" }
+      ]
+    },
+    {
+      "id": "ted-002",
+      "english": "When we slow down, we often notice details that speed has hidden from us.",
+      "chinese": "当我们慢下来时，常常会注意到被速度掩盖的细节。",
+      "startTime": 6.4,
+      "endTime": 13.1,
+      "audioPath": "",
+      "tags": ["reflection", "pace"],
+      "vocabulary": [
+        { "word": "notice", "meaning": "注意到" },
+        { "word": "details", "meaning": "细节" }
+      ]
+    },
+    {
+      "id": "ted-003",
+      "english": "Practice is not a performance; it is a place where mistakes can teach us.",
+      "chinese": "练习不是表演；它是一个错误能够教会我们的地方。",
+      "startTime": 13.2,
+      "endTime": 20,
+      "audioPath": "",
+      "tags": ["practice", "growth"],
+      "vocabulary": [
+        { "word": "performance", "meaning": "表演" },
+        { "word": "mistakes", "meaning": "错误" }
+      ]
+    }
+  ]
+}

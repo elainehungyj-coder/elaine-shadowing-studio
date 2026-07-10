@@ -1,0 +1,46 @@
+{
+  "id": "twilight",
+  "title": "Twilight Reading",
+  "description": "Narrative sentences for expressive reading practice.",
+  "sentences": [
+    {
+      "id": "twilight-001",
+      "english": "The quiet street looked different under the pale evening light.",
+      "chinese": "在苍白的暮光下，那条安静的街道显得有些不同。",
+      "startTime": 0,
+      "endTime": 5.8,
+      "audioPath": "",
+      "tags": ["story", "description"],
+      "vocabulary": [
+        { "word": "quiet", "meaning": "安静的" },
+        { "word": "pale", "meaning": "苍白的" }
+      ]
+    },
+    {
+      "id": "twilight-002",
+      "english": "She took a breath before answering, as if every word mattered.",
+      "chinese": "她回答前吸了一口气，仿佛每个词都很重要。",
+      "startTime": 5.9,
+      "endTime": 11.8,
+      "audioPath": "",
+      "tags": ["emotion", "pause"],
+      "vocabulary": [
+        { "word": "breath", "meaning": "呼吸" },
+        { "word": "mattered", "meaning": "重要" }
+      ]
+    },
+    {
+      "id": "twilight-003",
+      "english": "For a moment, the room was filled with a silence that felt almost alive.",
+      "chinese": "有那么一刻，房间里充满了一种几乎像有生命的沉默。",
+      "startTime": 11.9,
+      "endTime": 18.5,
+      "audioPath": "",
+      "tags": ["narrative", "mood"],
+      "vocabulary": [
+        { "word": "silence", "meaning": "沉默" },
+        { "word": "alive", "meaning": "有生命的" }
+      ]
+    }
+  ]
+}

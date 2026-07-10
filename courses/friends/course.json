@@ -1,0 +1,46 @@
+{
+  "id": "friends",
+  "title": "Friends Dialogues",
+  "description": "Conversational lines for everyday rhythm and intonation.",
+  "sentences": [
+    {
+      "id": "friends-001",
+      "english": "I know this sounds dramatic, but I really need five minutes to think.",
+      "chinese": "我知道这听起来很夸张，但我真的需要五分钟想一想。",
+      "startTime": 0,
+      "endTime": 5.6,
+      "audioPath": "",
+      "tags": ["dialogue", "daily"],
+      "vocabulary": [
+        { "word": "dramatic", "meaning": "夸张的" },
+        { "word": "think", "meaning": "思考" }
+      ]
+    },
+    {
+      "id": "friends-002",
+      "english": "Could you say that again, but maybe with less panic this time?",
+      "chinese": "你能再说一遍吗？不过这次能不能别那么慌？",
+      "startTime": 5.7,
+      "endTime": 11.2,
+      "audioPath": "",
+      "tags": ["humor", "intonation"],
+      "vocabulary": [
+        { "word": "panic", "meaning": "慌张" },
+        { "word": "again", "meaning": "再一次" }
+      ]
+    },
+    {
+      "id": "friends-003",
+      "english": "That is actually a pretty good plan, which is surprising coming from us.",
+      "chinese": "这其实是个挺不错的计划，从我们嘴里说出来还挺让人意外。",
+      "startTime": 11.3,
+      "endTime": 17.6,
+      "audioPath": "",
+      "tags": ["conversation", "humor"],
+      "vocabulary": [
+        { "word": "actually", "meaning": "其实" },
+        { "word": "surprising", "meaning": "令人意外的" }
+      ]
+    }
+  ]
+}

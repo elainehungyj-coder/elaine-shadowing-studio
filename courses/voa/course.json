@@ -1,0 +1,46 @@
+{
+  "id": "voa",
+  "title": "VOA Daily English",
+  "description": "Clear news-style English for daily shadowing.",
+  "sentences": [
+    {
+      "id": "voa-001",
+      "english": "Many learners improve their speaking by listening carefully and repeating short sentences.",
+      "chinese": "许多学习者通过认真聆听并重复短句来提高口语。",
+      "startTime": 0,
+      "endTime": 6.2,
+      "audioPath": "",
+      "tags": ["news", "learning", "clear"],
+      "vocabulary": [
+        { "word": "improve", "meaning": "提高" },
+        { "word": "carefully", "meaning": "认真地" }
+      ]
+    },
+    {
+      "id": "voa-002",
+      "english": "A steady routine can make pronunciation practice feel natural and less stressful.",
+      "chinese": "稳定的练习习惯能让发音训练变得自然，也减少压力。",
+      "startTime": 6.3,
+      "endTime": 12.4,
+      "audioPath": "",
+      "tags": ["routine", "pronunciation"],
+      "vocabulary": [
+        { "word": "steady", "meaning": "稳定的" },
+        { "word": "stressful", "meaning": "有压力的" }
+      ]
+    },
+    {
+      "id": "voa-003",
+      "english": "The goal is not to speak fast, but to speak with rhythm, clarity, and confidence.",
+      "chinese": "目标不是说得快，而是说得有节奏、清晰且自信。",
+      "startTime": 12.5,
+      "endTime": 19.4,
+      "audioPath": "",
+      "tags": ["rhythm", "confidence"],
+      "vocabulary": [
+        { "word": "clarity", "meaning": "清晰" },
+        { "word": "confidence", "meaning": "自信" }
+      ]
+    }
+  ]
+}
