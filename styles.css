@@ -149,8 +149,7 @@ progress::-webkit-progress-value { background: var(--success); border-radius: 99
 .vocabulary { margin-top: 12px; }
 
 .speed-controls {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   gap: 5px;
   padding: 4px;
   margin-bottom: 8px;
@@ -158,8 +157,9 @@ progress::-webkit-progress-value { background: var(--success); border-radius: 99
   background: #d8cec0;
 }
 
-.speed-controls button { min-height: 43px; border: 0; background: transparent; font-size: .86rem; font-weight: 550; }
+.speed-controls button { flex: 1 1 0; min-width: 0; min-height: 43px; border: 0; background: transparent; font-size: .86rem; font-weight: 550; }
 .speed-controls button.active { background: var(--card); color: var(--accent-text); box-shadow: 0 3px 12px rgba(76, 55, 37, .12); }
+.speed-controls #rateSelect { display: none !important; }
 
 .quick-settings {
   display: flex;
