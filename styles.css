@@ -145,7 +145,6 @@ progress::-webkit-progress-value { background: var(--success); border-radius: 99
   line-height: 1.45;
 }
 
-.mark-legend { margin: 0; color: var(--muted); font-size: .75rem; line-height: 1.6; }
 .vocabulary { margin-top: 12px; }
 
 .speed-controls {
