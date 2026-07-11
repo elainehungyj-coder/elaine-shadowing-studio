@@ -1,4 +1,4 @@
-const CACHE_NAME = "elaine-shadowing-studio-v10";
+const CACHE_NAME = "elaine-shadowing-studio-v11";
 
 const APP_SHELL = [
   "./",
@@ -8,6 +8,7 @@ const APP_SHELL = [
   "manifest.webmanifest",
   "assets/icons/icon-192.png",
   "assets/icons/icon-512.png",
+  "assets/icons/apple-touch-icon.png",
   "assets/icons/icon-192.svg",
   "assets/icons/icon-512.svg",
   "courses/catalog.json",
