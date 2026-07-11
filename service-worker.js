@@ -1,4 +1,4 @@
-const CACHE_NAME = "elaine-shadowing-studio-v7";
+const CACHE_NAME = "elaine-shadowing-studio-v8";
 
 const APP_SHELL = [
   "./",
