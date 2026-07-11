@@ -1,5 +1,6 @@
 const FALLBACK_COURSES = [
   { id: "twilight-chapter-01", title: "Twilight · Chapter 1", path: "courses/twilight-chapter-01/course.json" },
+  { id: "twilight-chapter-02", title: "Twilight · Chapter 2", path: "courses/twilight-chapter-02/course.json" },
   { id: "voa", title: "VOA Daily English", path: "courses/voa/course.json" },
   { id: "friends", title: "Friends Dialogues", path: "courses/friends/course.json" },
   { id: "ted", title: "TED Ideas", path: "courses/ted/course.json" }
