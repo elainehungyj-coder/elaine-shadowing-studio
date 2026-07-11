@@ -150,7 +150,7 @@ progress::-webkit-progress-value { background: var(--success); border-radius: 99
 
 .speed-controls {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 5px;
   padding: 4px;
   margin-bottom: 8px;

@@ -23,6 +23,7 @@ const els = {
   shadowingText: document.querySelector("#shadowingText"),
   vocabularyBox: document.querySelector("#vocabularyBox"),
   rateSelect: document.querySelector("#rateSelect"),
+  rate06Button: document.querySelector("#rate06Button"),
   rate075Button: document.querySelector("#rate075Button"),
   rate1Button: document.querySelector("#rate1Button"),
   loopToggle: document.querySelector("#loopToggle"),
@@ -92,6 +93,7 @@ function bindEvents() {
     await loadCourse(event.target.value, 0);
   });
 
+  els.rate06Button.addEventListener("click", () => setPlaybackRate(0.6));
   els.rate075Button.addEventListener("click", () => setPlaybackRate(0.75));
   els.rate1Button.addEventListener("click", () => setPlaybackRate(1));
 
@@ -211,7 +213,7 @@ async function playCurrentSentence() {
       state.audio.src = sentence.audioPath;
       await waitForAudioReady(state.audio);
     }
-    const selectedRate = Number(state.storage.rate) === 0.75 ? 0.75 : 1;
+    const selectedRate = normalizePlaybackRate(state.storage.rate);
     state.audio.defaultPlaybackRate = selectedRate;
     state.audio.playbackRate = selectedRate;
     state.audio.preservesPitch = true;
@@ -237,7 +239,7 @@ function stopPlayback() {
 }
 
 function setPlaybackRate(rate) {
-  const selectedRate = Number(rate) === 0.75 ? 0.75 : 1;
+  const selectedRate = normalizePlaybackRate(rate);
   state.storage.rate = selectedRate;
   els.rateSelect.value = String(selectedRate);
   state.audio.defaultPlaybackRate = selectedRate;
@@ -247,11 +249,18 @@ function setPlaybackRate(rate) {
 }
 
 function renderRateButtons() {
-  const rate = Number(state.storage.rate) === 0.75 ? 0.75 : 1;
+  const rate = normalizePlaybackRate(state.storage.rate);
+  els.rate06Button.classList.toggle("active", rate === 0.6);
   els.rate075Button.classList.toggle("active", rate === 0.75);
   els.rate1Button.classList.toggle("active", rate === 1);
+  els.rate06Button.setAttribute("aria-pressed", String(rate === 0.6));
   els.rate075Button.setAttribute("aria-pressed", String(rate === 0.75));
   els.rate1Button.setAttribute("aria-pressed", String(rate === 1));
+}
+
+function normalizePlaybackRate(rate) {
+  const numericRate = Number(rate);
+  return [0.6, 0.75, 1].includes(numericRate) ? numericRate : 1;
 }
 
 function renderLoopState() {
@@ -419,7 +428,7 @@ function ensureCourseStorage() {
 }
 
 function restorePreferences() {
-  state.storage.rate = Number(state.storage.rate) === 0.75 ? 0.75 : 1;
+  state.storage.rate = normalizePlaybackRate(state.storage.rate);
   els.rateSelect.value = String(state.storage.rate);
   els.loopToggle.checked = Boolean(state.storage.loop);
   els.translationToggle.checked = state.storage.showTranslation !== false;
