@@ -23,14 +23,17 @@ const els = {
   shadowingText: document.querySelector("#shadowingText"),
   vocabularyBox: document.querySelector("#vocabularyBox"),
   rateSelect: document.querySelector("#rateSelect"),
+  rate075Button: document.querySelector("#rate075Button"),
+  rate1Button: document.querySelector("#rate1Button"),
   loopToggle: document.querySelector("#loopToggle"),
+  loopButton: document.querySelector("#loopButton"),
+  stopButton: document.querySelector("#stopButton"),
   translationToggle: document.querySelector("#translationToggle"),
   prevButton: document.querySelector("#prevButton"),
   playButton: document.querySelector("#playButton"),
   nextButton: document.querySelector("#nextButton"),
   favoriteButton: document.querySelector("#favoriteButton"),
   masteredButton: document.querySelector("#masteredButton"),
-  themeToggle: document.querySelector("#themeToggle"),
   bigTextToggle: document.querySelector("#bigTextToggle"),
   recordButton: document.querySelector("#recordButton"),
   playRecordingButton: document.querySelector("#playRecordingButton"),
@@ -89,26 +92,26 @@ function bindEvents() {
     await loadCourse(event.target.value, 0);
   });
 
-  els.rateSelect.addEventListener("change", () => {
-    state.storage.rate = Number(els.rateSelect.value);
-    saveStorage();
-  });
+  els.rate075Button.addEventListener("click", () => setPlaybackRate(0.75));
+  els.rate1Button.addEventListener("click", () => setPlaybackRate(1));
 
   els.loopToggle.addEventListener("change", () => {
     state.storage.loop = els.loopToggle.checked;
     saveStorage();
+    renderLoopState();
+  });
+
+  els.loopButton.addEventListener("click", () => {
+    els.loopToggle.checked = !els.loopToggle.checked;
+    state.storage.loop = els.loopToggle.checked;
+    saveStorage();
+    renderLoopState();
   });
 
   els.translationToggle.addEventListener("change", () => {
     state.storage.showTranslation = els.translationToggle.checked;
     saveStorage();
     renderSentence();
-  });
-
-  els.themeToggle.addEventListener("click", () => {
-    state.storage.darkMode = !state.storage.darkMode;
-    saveStorage();
-    applyPreferences();
   });
 
   els.bigTextToggle.addEventListener("click", () => {
@@ -120,6 +123,7 @@ function bindEvents() {
   els.prevButton.addEventListener("click", () => goToSentence(state.index - 1));
   els.nextButton.addEventListener("click", () => goToSentence(state.index + 1));
   els.playButton.addEventListener("click", () => playCurrentSentence());
+  els.stopButton.addEventListener("click", () => stopPlayback());
   els.favoriteButton.addEventListener("click", () => toggleSentenceState("favorites"));
   els.masteredButton.addEventListener("click", () => toggleSentenceState("mastered"));
   els.recordButton.addEventListener("click", () => toggleRecording());
@@ -130,7 +134,7 @@ function bindEvents() {
     if (els.loopToggle.checked && !state.compareRunning) {
       playCurrentSentence();
     } else {
-      els.playButton.textContent = "播放";
+      els.playButton.textContent = "▶ 播放真人原声";
     }
   });
 }
@@ -197,10 +201,9 @@ async function playCurrentSentence() {
   const sentence = getCurrentSentence();
   if (!sentence) return;
 
-  els.playButton.textContent = "播放中";
+  els.playButton.textContent = "❚❚ 播放中";
   state.audio.pause();
   state.audio.currentTime = 0;
-  state.audio.playbackRate = Number(els.rateSelect.value);
 
   try {
     if (!sentence.audioPath) throw new Error("Missing human audio");
@@ -208,6 +211,10 @@ async function playCurrentSentence() {
       state.audio.src = sentence.audioPath;
       await waitForAudioReady(state.audio);
     }
+    const selectedRate = Number(state.storage.rate) === 0.75 ? 0.75 : 1;
+    state.audio.defaultPlaybackRate = selectedRate;
+    state.audio.playbackRate = selectedRate;
+    state.audio.preservesPitch = true;
     state.audio.currentTime = sentence.startTime || 0;
     const ended = waitForAudioEnd(state.audio);
     await state.audio.play();
@@ -216,10 +223,41 @@ async function playCurrentSentence() {
     }
     return ended;
   } catch {
-    els.playButton.textContent = "播放";
+    els.playButton.textContent = "▶ 播放真人原声";
     els.recordingStatus.textContent = "真人原声无法加载";
     return Promise.resolve();
   }
+}
+
+function stopPlayback() {
+  state.audio.pause();
+  state.audio.currentTime = 0;
+  els.playButton.textContent = "▶ 播放真人原声";
+  els.recordingStatus.textContent = "已停止";
+}
+
+function setPlaybackRate(rate) {
+  const selectedRate = Number(rate) === 0.75 ? 0.75 : 1;
+  state.storage.rate = selectedRate;
+  els.rateSelect.value = String(selectedRate);
+  state.audio.defaultPlaybackRate = selectedRate;
+  state.audio.playbackRate = selectedRate;
+  saveStorage();
+  renderRateButtons();
+}
+
+function renderRateButtons() {
+  const rate = Number(state.storage.rate) === 0.75 ? 0.75 : 1;
+  els.rate075Button.classList.toggle("active", rate === 0.75);
+  els.rate1Button.classList.toggle("active", rate === 1);
+  els.rate075Button.setAttribute("aria-pressed", String(rate === 0.75));
+  els.rate1Button.setAttribute("aria-pressed", String(rate === 1));
+}
+
+function renderLoopState() {
+  const enabled = els.loopToggle.checked;
+  els.loopButton.classList.toggle("active", enabled);
+  els.loopButton.textContent = `↻ 单句循环：${enabled ? "开" : "关"}`;
 }
 
 function stopAtEndTime(endTime) {
@@ -381,14 +419,16 @@ function ensureCourseStorage() {
 }
 
 function restorePreferences() {
-  els.rateSelect.value = String(state.storage.rate || 1);
+  state.storage.rate = Number(state.storage.rate) === 0.75 ? 0.75 : 1;
+  els.rateSelect.value = String(state.storage.rate);
   els.loopToggle.checked = Boolean(state.storage.loop);
   els.translationToggle.checked = state.storage.showTranslation !== false;
   applyPreferences();
+  renderRateButtons();
+  renderLoopState();
 }
 
 function applyPreferences() {
-  els.root.classList.toggle("dark", Boolean(state.storage.darkMode));
   els.body.classList.toggle("big-text", Boolean(state.storage.bigText));
   els.bigTextToggle.classList.toggle("active", Boolean(state.storage.bigText));
 }
