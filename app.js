@@ -1,5 +1,5 @@
 const FALLBACK_COURSES = [
-  { id: "twilight", title: "Twilight · Lesson 1", path: "courses/twilight/course.json" },
+  { id: "twilight-chapter-01", title: "Twilight · Chapter 1", path: "courses/twilight-chapter-01/course.json" },
   { id: "voa", title: "VOA Daily English", path: "courses/voa/course.json" },
   { id: "friends", title: "Friends Dialogues", path: "courses/friends/course.json" },
   { id: "ted", title: "TED Ideas", path: "courses/ted/course.json" }
@@ -45,7 +45,7 @@ const els = {
 };
 
 const state = {
-  courseId: "twilight",
+  courseId: "twilight-chapter-01",
   course: null,
   index: 0,
   audio: new Audio(),
@@ -66,7 +66,7 @@ async function init() {
   restorePreferences();
   renderCourseOptions();
   bindEvents();
-  await loadCourse(state.storage.lastCourseId || "twilight", state.storage.lastIndex || 0);
+  await loadCourse(state.storage.lastCourseId || "twilight-chapter-01", state.storage.lastIndex || 0);
   registerServiceWorker();
 }
 

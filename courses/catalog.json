@@ -6,11 +6,6 @@
       "path": "courses/twilight-chapter-01/course.json"
     },
     {
-      "id": "twilight",
-      "title": "Twilight · Lesson 1",
-      "path": "courses/twilight/course.json"
-    },
-    {
       "id": "voa",
       "title": "VOA Daily English",
       "path": "courses/voa/course.json"
