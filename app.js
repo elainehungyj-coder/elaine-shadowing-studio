@@ -1,9 +1,11 @@
-const COURSES = [
+const FALLBACK_COURSES = [
+  { id: "twilight", title: "Twilight · Lesson 1", path: "courses/twilight/course.json" },
   { id: "voa", title: "VOA Daily English", path: "courses/voa/course.json" },
-  { id: "twilight", title: "Twilight Reading", path: "courses/twilight/course.json" },
   { id: "friends", title: "Friends Dialogues", path: "courses/friends/course.json" },
   { id: "ted", title: "TED Ideas", path: "courses/ted/course.json" }
 ];
+
+let COURSES = FALLBACK_COURSES;
 
 const STORAGE_KEY = "elaine-shadowing-studio:v1";
 
@@ -18,6 +20,7 @@ const els = {
   tagRow: document.querySelector("#tagRow"),
   englishText: document.querySelector("#englishText"),
   chineseText: document.querySelector("#chineseText"),
+  shadowingText: document.querySelector("#shadowingText"),
   vocabularyBox: document.querySelector("#vocabularyBox"),
   rateSelect: document.querySelector("#rateSelect"),
   loopToggle: document.querySelector("#loopToggle"),
@@ -37,7 +40,7 @@ const els = {
 };
 
 const state = {
-  courseId: "voa",
+  courseId: "twilight",
   course: null,
   index: 0,
   audio: new Audio(),
@@ -47,17 +50,32 @@ const state = {
   recordingStartedAt: 0,
   timerId: 0,
   compareAbort: false,
+  compareRunning: false,
   storage: loadStorage()
 };
 
 init();
 
 async function init() {
+  await loadCourseCatalog();
   restorePreferences();
   renderCourseOptions();
   bindEvents();
-  await loadCourse(state.storage.lastCourseId || "voa", state.storage.lastIndex || 0);
+  await loadCourse(state.storage.lastCourseId || "twilight", state.storage.lastIndex || 0);
   registerServiceWorker();
+}
+
+async function loadCourseCatalog() {
+  try {
+    const response = await fetch("courses/catalog.json", { cache: "no-cache" });
+    if (!response.ok) throw new Error("Course catalog unavailable");
+    const catalog = await response.json();
+    if (Array.isArray(catalog.courses) && catalog.courses.length) {
+      COURSES = catalog.courses;
+    }
+  } catch {
+    COURSES = FALLBACK_COURSES;
+  }
 }
 
 function renderCourseOptions() {
@@ -109,7 +127,7 @@ function bindEvents() {
   els.compareButton.addEventListener("click", () => playComparison());
 
   state.audio.addEventListener("ended", () => {
-    if (els.loopToggle.checked) {
+    if (els.loopToggle.checked && !state.compareRunning) {
       playCurrentSentence();
     } else {
       els.playButton.textContent = "播放";
@@ -142,9 +160,10 @@ function renderSentence() {
   els.courseProgress.value = progress.percent;
   els.englishText.textContent = sentence.english;
   els.chineseText.textContent = sentence.chinese;
+  els.shadowingText.textContent = sentence.shadowing || sentence.english;
   els.chineseText.classList.toggle("hidden", !els.translationToggle.checked);
-  els.tagRow.innerHTML = sentence.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("");
-  els.vocabularyBox.innerHTML = sentence.vocabulary.map((item) => {
+  els.tagRow.innerHTML = (sentence.tags || []).map((tag) => `<span>${escapeHtml(tag)}</span>`).join("");
+  els.vocabularyBox.innerHTML = (sentence.vocabulary || []).map((item) => {
     return `<span class="vocab-pill">${escapeHtml(item.word)} · ${escapeHtml(item.meaning)}</span>`;
   }).join("");
 
@@ -167,7 +186,6 @@ function getCourseProgress() {
 
 function goToSentence(index) {
   state.audio.pause();
-  window.speechSynthesis?.cancel();
   clearRecording();
   state.index = clamp(index, 0, state.course.sentences.length - 1);
   state.storage.lastIndex = state.index;
@@ -185,19 +203,22 @@ async function playCurrentSentence() {
   state.audio.playbackRate = Number(els.rateSelect.value);
 
   try {
-    if (sentence.audioPath) {
+    if (!sentence.audioPath) throw new Error("Missing human audio");
+    if (state.audio.src !== new URL(sentence.audioPath, window.location.href).href) {
       state.audio.src = sentence.audioPath;
-      state.audio.currentTime = sentence.startTime || 0;
-      const ended = waitForAudioEnd(state.audio);
-      await state.audio.play();
-      if (Number.isFinite(sentence.endTime) && sentence.endTime > sentence.startTime) {
-        stopAtEndTime(sentence.endTime);
-      }
-      return ended;
+      await waitForAudioReady(state.audio);
     }
-    throw new Error("Missing audioPath");
+    state.audio.currentTime = sentence.startTime || 0;
+    const ended = waitForAudioEnd(state.audio);
+    await state.audio.play();
+    if (Number.isFinite(sentence.endTime) && sentence.endTime > sentence.startTime) {
+      stopAtEndTime(sentence.endTime);
+    }
+    return ended;
   } catch {
-    return speakSentence(sentence.english);
+    els.playButton.textContent = "播放";
+    els.recordingStatus.textContent = "真人原声无法加载";
+    return Promise.resolve();
   }
 }
 
@@ -213,32 +234,6 @@ function stopAtEndTime(endTime) {
     requestAnimationFrame(check);
   };
   requestAnimationFrame(check);
-}
-
-function speakSentence(text) {
-  if (!("speechSynthesis" in window)) {
-    els.playButton.textContent = "播放";
-    return Promise.resolve();
-  }
-  window.speechSynthesis.cancel();
-  return new Promise((resolve) => {
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = "en-US";
-    utterance.rate = Number(els.rateSelect.value);
-    utterance.onend = () => {
-      if (els.loopToggle.checked) {
-        playCurrentSentence();
-      } else {
-        els.playButton.textContent = "播放";
-      }
-      resolve();
-    };
-    utterance.onerror = () => {
-      els.playButton.textContent = "播放";
-      resolve();
-    };
-    window.speechSynthesis.speak(utterance);
-  });
 }
 
 function toggleSentenceState(type) {
@@ -320,12 +315,24 @@ function playRecording() {
 async function playComparison() {
   if (!state.recordingUrl) return;
   state.compareAbort = false;
+  state.compareRunning = true;
   els.compareButton.disabled = true;
-  els.compareButton.textContent = "对比中";
+  els.compareButton.textContent = "播放原声…";
   await playCurrentSentence();
+  els.compareButton.textContent = "播放录音…";
   await playRecording();
+  state.compareRunning = false;
   els.compareButton.textContent = "原声 / 录音";
   els.compareButton.disabled = false;
+}
+
+function waitForAudioReady(audio) {
+  if (audio.readyState >= 1) return Promise.resolve();
+  return new Promise((resolve, reject) => {
+    audio.addEventListener("loadedmetadata", resolve, { once: true });
+    audio.addEventListener("error", reject, { once: true });
+    audio.load();
+  });
 }
 
 function waitForAudioEnd(audio) {

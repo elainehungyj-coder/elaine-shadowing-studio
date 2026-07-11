@@ -1,0 +1,24 @@
+{
+  "courses": [
+    {
+      "id": "twilight",
+      "title": "Twilight · Lesson 1",
+      "path": "courses/twilight/course.json"
+    },
+    {
+      "id": "voa",
+      "title": "VOA Daily English",
+      "path": "courses/voa/course.json"
+    },
+    {
+      "id": "friends",
+      "title": "Friends Dialogues",
+      "path": "courses/friends/course.json"
+    },
+    {
+      "id": "ted",
+      "title": "TED Ideas",
+      "path": "courses/ted/course.json"
+    }
+  ]
+}

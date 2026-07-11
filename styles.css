@@ -261,6 +261,16 @@ progress::-webkit-progress-value {
   line-height: 1.55;
 }
 
+.shadowing {
+  margin: 4px 0 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--accent-strong);
+  font-size: 1.22rem;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
 .chinese.hidden {
   display: none;
 }
@@ -363,6 +373,10 @@ progress::-webkit-progress-value {
 
 .big-text .chinese {
   font-size: 1.25rem;
+}
+
+.big-text .shadowing {
+  font-size: 1.5rem;
 }
 
 @media (min-width: 520px) {
