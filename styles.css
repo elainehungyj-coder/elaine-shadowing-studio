@@ -55,7 +55,7 @@ button, select, input { -webkit-tap-highlight-color: transparent; }
 }
 
 h1, h2, p { margin-top: 0; }
-h1 { margin-bottom: 0; font-size: clamp(1.55rem, 7vw, 2.2rem); line-height: 1.05; }
+h1 { margin-bottom: 0; font-size: clamp(1.35rem, 5.5vw, 1.85rem); font-weight: 650; line-height: 1.1; }
 h2 { margin-bottom: 4px; font-size: 1rem; }
 
 .sentence-counter {
@@ -75,7 +75,7 @@ button, select {
 button {
   min-height: 54px;
   padding: 0 14px;
-  font-weight: 800;
+  font-weight: 650;
   cursor: pointer;
 }
 
@@ -89,7 +89,7 @@ button.active { border-color: var(--accent); background: var(--accent-soft); col
   margin-bottom: 10px;
 }
 
-select { width: 100%; min-height: 48px; padding: 0 12px; font-weight: 750; background: var(--card); }
+select { width: 100%; min-height: 48px; padding: 0 12px; font-weight: 600; background: var(--card); }
 .small-button { min-width: 88px; min-height: 48px; background: var(--card); }
 
 .progress-panel {
@@ -125,13 +125,13 @@ progress::-webkit-progress-value { background: var(--success); border-radius: 99
 .english {
   margin-bottom: 18px;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, 8vw, 3.35rem);
-  font-weight: 700;
-  line-height: 1.12;
+  font-size: clamp(1.55rem, 6.5vw, 2.65rem);
+  font-weight: 500;
+  line-height: 1.2;
   overflow-wrap: anywhere;
 }
 
-.chinese { margin-bottom: 24px; color: var(--muted); font-size: 1.08rem; line-height: 1.55; }
+.chinese { margin-bottom: 24px; color: var(--muted); font-size: .98rem; font-weight: 400; line-height: 1.55; }
 .chinese.hidden { display: none; }
 
 .shadowing {
@@ -140,8 +140,8 @@ progress::-webkit-progress-value { background: var(--success); border-radius: 99
   border-top: 1px solid var(--line);
   color: var(--accent-text);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.25rem, 5vw, 1.7rem);
-  font-weight: 700;
+  font-size: clamp(1.08rem, 4.3vw, 1.42rem);
+  font-weight: 550;
   line-height: 1.45;
 }
 
@@ -157,7 +157,7 @@ progress::-webkit-progress-value { background: var(--success); border-radius: 99
   background: #d8cec0;
 }
 
-.speed-controls button { min-height: 58px; border: 0; background: transparent; font-size: 1.05rem; }
+.speed-controls button { min-height: 56px; border: 0; background: transparent; font-size: 1rem; font-weight: 650; }
 .speed-controls button.active { background: var(--card); color: var(--accent-text); box-shadow: 0 3px 12px rgba(76, 55, 37, .12); }
 
 .quick-settings {
@@ -167,12 +167,12 @@ progress::-webkit-progress-value { background: var(--success); border-radius: 99
   padding: 0 6px 12px;
 }
 
-.quick-settings label { display: flex; align-items: center; gap: 7px; color: var(--muted); font-size: .85rem; font-weight: 700; }
+.quick-settings label { display: flex; align-items: center; gap: 7px; color: var(--muted); font-size: .84rem; font-weight: 500; }
 .quick-settings input { width: 20px; height: 20px; accent-color: var(--accent); }
 
 .primary-controls, .status-controls, .recording-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .primary-controls { margin-bottom: 10px; }
-.play-button { grid-column: 1 / -1; min-height: 64px; background: var(--accent); border-color: var(--accent); color: #fffdf8; font-size: 1.05rem; }
+.play-button { grid-column: 1 / -1; min-height: 62px; background: var(--accent); border-color: var(--accent); color: #fffdf8; font-size: 1rem; font-weight: 650; }
 .status-controls { margin-bottom: 12px; }
 .status-controls button.active { background: #d9e5dc; border-color: var(--success); color: #34503c; }
 
@@ -190,9 +190,9 @@ progress::-webkit-progress-value { background: var(--success); border-radius: 99
 #recordButton { grid-column: 1 / -1; }
 #recordButton.recording { background: #b75b4d; border-color: #b75b4d; color: #fff; }
 
-.big-text .english { font-size: clamp(2.5rem, 10vw, 3.8rem); }
-.big-text .chinese { font-size: 1.3rem; }
-.big-text .shadowing { font-size: 1.75rem; }
+.big-text .english { font-size: clamp(2rem, 8vw, 3.15rem); }
+.big-text .chinese { font-size: 1.15rem; }
+.big-text .shadowing { font-size: 1.55rem; }
 
 @media (min-width: 520px) {
   .app-shell { padding-inline: 22px; }
