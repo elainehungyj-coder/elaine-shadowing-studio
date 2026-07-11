@@ -8,6 +8,7 @@ const FALLBACK_COURSES = [
 let COURSES = FALLBACK_COURSES;
 
 const STORAGE_KEY = "elaine-shadowing-studio:v1";
+const AUDIO_ACCESS_KEY = "elaine-shadowing-studio:r2-audio-token";
 
 const els = {
   root: document.documentElement,
@@ -209,8 +210,9 @@ async function playCurrentSentence() {
 
   try {
     if (!sentence.audioPath) throw new Error("Missing human audio");
-    if (state.audio.src !== new URL(sentence.audioPath, window.location.href).href) {
-      state.audio.src = sentence.audioPath;
+    const audioUrl = resolveAudioUrl(sentence.audioPath);
+    if (state.audio.src !== audioUrl) {
+      state.audio.src = audioUrl;
       await waitForAudioReady(state.audio);
     }
     const selectedRate = normalizePlaybackRate(state.storage.rate);
@@ -226,9 +228,27 @@ async function playCurrentSentence() {
     return ended;
   } catch {
     els.playButton.textContent = "▶ 播放真人原声";
-    els.recordingStatus.textContent = "真人原声无法加载";
+    if (state.course.protectedAudio) {
+      localStorage.removeItem(AUDIO_ACCESS_KEY);
+      els.recordingStatus.textContent = "音频密码或网络有误，请重新播放";
+    } else {
+      els.recordingStatus.textContent = "真人原声无法加载";
+    }
     return Promise.resolve();
   }
+}
+
+function resolveAudioUrl(path) {
+  const url = new URL(path, window.location.href);
+  if (!state.course.protectedAudio) return url.href;
+  let token = localStorage.getItem(AUDIO_ACCESS_KEY);
+  if (!token) {
+    token = window.prompt("请输入私人音频密码");
+    if (!token) throw new Error("Audio password required");
+    localStorage.setItem(AUDIO_ACCESS_KEY, token.trim());
+  }
+  url.searchParams.set("token", token.trim());
+  return url.href;
 }
 
 function stopPlayback() {

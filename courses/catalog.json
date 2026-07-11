@@ -1,6 +1,11 @@
 {
   "courses": [
     {
+      "id": "twilight-chapter-01",
+      "title": "Twilight · Chapter 1",
+      "path": "courses/twilight-chapter-01/course.json"
+    },
+    {
       "id": "twilight",
       "title": "Twilight · Lesson 1",
       "path": "courses/twilight/course.json"
