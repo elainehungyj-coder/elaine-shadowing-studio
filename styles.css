@@ -55,7 +55,7 @@ button, select, input { -webkit-tap-highlight-color: transparent; }
 }
 
 h1, h2, p { margin-top: 0; }
-h1 { margin-bottom: 0; font-size: clamp(1.35rem, 5.5vw, 1.85rem); font-weight: 650; line-height: 1.1; }
+h1 { margin-bottom: 0; font-size: clamp(1.2rem, 5vw, 1.65rem); font-weight: 600; line-height: 1.1; }
 h2 { margin-bottom: 4px; font-size: 1rem; }
 
 .sentence-counter {
@@ -106,7 +106,7 @@ progress::-webkit-progress-bar { background: var(--line); }
 progress::-webkit-progress-value { background: var(--success); border-radius: 99px; }
 
 .sentence-card {
-  min-height: 400px;
+  min-height: 350px;
   padding: 30px 24px;
   margin-bottom: 14px;
   border: 1px solid var(--line);
@@ -125,13 +125,13 @@ progress::-webkit-progress-value { background: var(--success); border-radius: 99
 .english {
   margin-bottom: 18px;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.55rem, 6.5vw, 2.65rem);
+  font-size: clamp(1.35rem, 5.7vw, 2.25rem);
   font-weight: 500;
   line-height: 1.2;
   overflow-wrap: anywhere;
 }
 
-.chinese { margin-bottom: 24px; color: var(--muted); font-size: .98rem; font-weight: 400; line-height: 1.55; }
+.chinese { margin-bottom: 22px; color: var(--muted); font-size: .9rem; font-weight: 400; line-height: 1.55; }
 .chinese.hidden { display: none; }
 
 .shadowing {
@@ -140,8 +140,8 @@ progress::-webkit-progress-value { background: var(--success); border-radius: 99
   border-top: 1px solid var(--line);
   color: var(--accent-text);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.08rem, 4.3vw, 1.42rem);
-  font-weight: 550;
+  font-size: clamp(.98rem, 3.9vw, 1.25rem);
+  font-weight: 500;
   line-height: 1.45;
 }
 
@@ -157,7 +157,7 @@ progress::-webkit-progress-value { background: var(--success); border-radius: 99
   background: #d8cec0;
 }
 
-.speed-controls button { min-height: 56px; border: 0; background: transparent; font-size: 1rem; font-weight: 650; }
+.speed-controls button { min-height: 54px; border: 0; background: transparent; font-size: .94rem; font-weight: 600; }
 .speed-controls button.active { background: var(--card); color: var(--accent-text); box-shadow: 0 3px 12px rgba(76, 55, 37, .12); }
 
 .quick-settings {
@@ -172,7 +172,7 @@ progress::-webkit-progress-value { background: var(--success); border-radius: 99
 
 .primary-controls, .status-controls, .recording-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .primary-controls { margin-bottom: 10px; }
-.play-button { grid-column: 1 / -1; min-height: 62px; background: var(--accent); border-color: var(--accent); color: #fffdf8; font-size: 1rem; font-weight: 650; }
+.play-button { grid-column: 1 / -1; min-height: 60px; background: var(--accent); border-color: var(--accent); color: #fffdf8; font-size: .94rem; font-weight: 600; }
 .status-controls { margin-bottom: 12px; }
 .status-controls button.active { background: #d9e5dc; border-color: var(--success); color: #34503c; }
 
@@ -196,5 +196,5 @@ progress::-webkit-progress-value { background: var(--success); border-radius: 99
 
 @media (min-width: 520px) {
   .app-shell { padding-inline: 22px; }
-  .sentence-card { min-height: 470px; padding: 38px 34px; }
+  .sentence-card { min-height: 410px; padding: 34px 32px; }
 }
