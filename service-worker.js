@@ -1,10 +1,10 @@
-const CACHE_NAME = "elaine-shadowing-studio-v21";
+const CACHE_NAME = "elaine-shadowing-studio-v22";
 
 const APP_SHELL = [
   "./",
   "index.html",
-  "styles.css?v=21",
-  "app.js?v=21",
+  "styles.css?v=22",
+  "app.js?v=22",
   "manifest.webmanifest",
   "assets/icons/icon-192.png",
   "assets/icons/icon-512.png",
@@ -19,6 +19,7 @@ const APP_SHELL = [
   "courses/twilight-chapter-05/course.json",
   "courses/twilight-chapter-06/course.json",
   "courses/twilight-chapter-07/course.json",
+  "courses/twilight-chapter-08/course.json",
   "courses/voa/course.json",
   "courses/friends/course.json",
   "courses/ted/course.json"
