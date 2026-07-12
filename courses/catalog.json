@@ -31,6 +31,11 @@
       "path": "courses/twilight-chapter-06/course.json"
     },
     {
+      "id": "twilight-chapter-07",
+      "title": "Twilight · Chapter 7",
+      "path": "courses/twilight-chapter-07/course.json"
+    },
+    {
       "id": "voa",
       "title": "VOA Daily English",
       "path": "courses/voa/course.json"
