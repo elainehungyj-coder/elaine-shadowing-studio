@@ -1,10 +1,10 @@
-const CACHE_NAME = "elaine-shadowing-studio-v32";
+const CACHE_NAME = "elaine-shadowing-studio-v33";
 
 const APP_SHELL = [
   "./",
   "index.html",
-  "styles.css?v=32",
-  "app.js?v=32",
+  "styles.css?v=33",
+  "app.js?v=33",
   "manifest.webmanifest",
   "assets/icons/icon-192.png",
   "assets/icons/icon-512.png",
