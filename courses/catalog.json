@@ -94,6 +94,11 @@
       "id": "ted",
       "title": "TED Ideas",
       "path": "courses/ted/course.json"
+    },
+    {
+      "id": "shunbin-reading-notes",
+      "title": "2026年8月会议 · 补充跟读",
+      "path": "courses/shunbin-reading-notes/course.json"
     }
   ]
 }
