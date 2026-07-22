@@ -436,7 +436,7 @@ function waitForAudioEnd(audio) {
 
 function resetRecordingUi() {
   clearInterval(state.timerId);
-  state.recordingTimer.textContent = "00:00";
+  els.recordingTimer.textContent = "00:00";
   els.recordButton.textContent = "开始录音";
   els.recordButton.classList.remove("recording");
   els.recordingStatus.textContent = "准备录音";
