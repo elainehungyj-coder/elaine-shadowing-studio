@@ -18,7 +18,7 @@ const FALLBACK_COURSES = [
   { id: "voa", title: "VOA Daily English", path: "courses/voa/course.json" },
   { id: "friends", title: "Friends Dialogues", path: "courses/friends/course.json" },
   { id: "ted", title: "TED Ideas", path: "courses/ted/course.json" },
-  { id: "shunbin-reading-notes", title: "2026年8月会议 · 补充跟读", path: "courses/shunbin-reading-notes/course.json" }
+  { id: "shunbin-august-2026", title: "2026年8月 Shunbin 会议跟读", path: "courses/shunbin-august-2026/course.json" }
 ];
 
 let COURSES = FALLBACK_COURSES;

@@ -31,7 +31,7 @@ const APP_SHELL = [
   "courses/voa/course.json",
   "courses/friends/course.json",
   "courses/ted/course.json",
-  "courses/shunbin-reading-notes/course.json"
+  "courses/shunbin-august-2026/course.json"
 ];
 
 self.addEventListener("install", (event) => {
