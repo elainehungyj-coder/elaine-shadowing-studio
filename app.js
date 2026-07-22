@@ -17,7 +17,8 @@ const FALLBACK_COURSES = [
   { id: "twilight-chapter-16", title: "Twilight · Chapter 16", path: "courses/twilight-chapter-16/course.json" },
   { id: "voa", title: "VOA Daily English", path: "courses/voa/course.json" },
   { id: "friends", title: "Friends Dialogues", path: "courses/friends/course.json" },
-  { id: "ted", title: "TED Ideas", path: "courses/ted/course.json" }
+  { id: "ted", title: "TED Ideas", path: "courses/ted/course.json" },
+  { id: "shunbin-august-2026", title: "2026年8月 Shunbin 会议跟读", path: "courses/shunbin-august-2026/course.json" }
 ];
 
 let COURSES = FALLBACK_COURSES;
@@ -174,6 +175,7 @@ async function loadCourse(courseId, preferredIndex) {
 function renderSentence() {
   const sentence = getCurrentSentence();
   if (!sentence) return;
+  const hasAudio = Boolean(sentence.audioPath);
 
   const progress = getCourseProgress();
   els.courseTitle.textContent = state.course.title;
@@ -195,6 +197,14 @@ function renderSentence() {
   els.masteredButton.textContent = hasSentenceState("mastered") ? "已掌握" : "已掌握";
   els.prevButton.disabled = state.index === 0;
   els.nextButton.disabled = state.index === state.course.sentences.length - 1;
+  els.playButton.disabled = !hasAudio;
+  els.playButton.textContent = hasAudio ? "▶ 播放真人原声" : "本句无音频";
+  els.stopButton.disabled = !hasAudio;
+  els.loopButton.disabled = !hasAudio;
+  els.loopToggle.disabled = !hasAudio;
+  els.rate06Button.disabled = !hasAudio;
+  els.rate075Button.disabled = !hasAudio;
+  els.rate1Button.disabled = !hasAudio;
 
   resetRecordingUi();
 }
@@ -355,7 +365,7 @@ async function toggleRecording() {
       if (state.recordingUrl) URL.revokeObjectURL(state.recordingUrl);
       state.recordingUrl = URL.createObjectURL(blob);
       els.playRecordingButton.disabled = false;
-      els.compareButton.disabled = false;
+      els.compareButton.disabled = !getCurrentSentence()?.audioPath;
       els.recordingStatus.textContent = "录音已保存到本次会话";
     });
     state.mediaRecorder.start();
@@ -395,7 +405,7 @@ function playRecording() {
 }
 
 async function playComparison() {
-  if (!state.recordingUrl) return;
+  if (!state.recordingUrl || !getCurrentSentence()?.audioPath) return;
   state.compareAbort = false;
   state.compareRunning = true;
   els.compareButton.disabled = true;
@@ -431,7 +441,7 @@ function resetRecordingUi() {
   els.recordButton.classList.remove("recording");
   els.recordingStatus.textContent = "准备录音";
   els.playRecordingButton.disabled = !state.recordingUrl;
-  els.compareButton.disabled = !state.recordingUrl;
+  els.compareButton.disabled = !state.recordingUrl || !getCurrentSentence()?.audioPath;
 }
 
 function clearRecording() {
