@@ -1,10 +1,10 @@
-const CACHE_NAME = "elaine-shadowing-studio-v36";
+const CACHE_NAME = "elaine-shadowing-studio-v37";
 
 const APP_SHELL = [
   "./",
   "index.html",
-  "styles.css?v=36",
-  "app.js?v=36",
+  "styles.css?v=37",
+  "app.js?v=37",
   "manifest.webmanifest",
   "assets/icons/icon-192.png",
   "assets/icons/icon-512.png",
@@ -31,7 +31,7 @@ const APP_SHELL = [
   "courses/voa/course.json",
   "courses/friends/course.json",
   "courses/ted/course.json",
-  "courses/shunbin-august-2026/course.json?v=36"
+  "courses/shunbin-august-2026/course.json?v=37"
 ];
 
 self.addEventListener("install", (event) => {
@@ -52,6 +52,21 @@ self.addEventListener("activate", (event) => {
 
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
+
+  const url = new URL(event.request.url);
+  const isCourseData = url.pathname.endsWith("/courses/catalog.json") || url.pathname.endsWith("/course.json");
+
+  if (isCourseData) {
+    event.respondWith(
+      fetch(event.request).then((response) => {
+        const copy = response.clone();
+        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+        return response;
+      }).catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request).then((cached) => {
       if (cached) return cached;
