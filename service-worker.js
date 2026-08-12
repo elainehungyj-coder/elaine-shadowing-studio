@@ -1,10 +1,10 @@
-const CACHE_NAME = "elaine-shadowing-studio-v35";
+const CACHE_NAME = "elaine-shadowing-studio-v36";
 
 const APP_SHELL = [
   "./",
   "index.html",
-  "styles.css?v=35",
-  "app.js?v=35",
+  "styles.css?v=36",
+  "app.js?v=36",
   "manifest.webmanifest",
   "assets/icons/icon-192.png",
   "assets/icons/icon-512.png",
@@ -31,7 +31,7 @@ const APP_SHELL = [
   "courses/voa/course.json",
   "courses/friends/course.json",
   "courses/ted/course.json",
-  "courses/shunbin-august-2026/course.json?v=35"
+  "courses/shunbin-august-2026/course.json?v=36"
 ];
 
 self.addEventListener("install", (event) => {
