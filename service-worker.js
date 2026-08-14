@@ -1,4 +1,4 @@
-const CACHE_NAME = "elaine-shadowing-studio-v37";
+const CACHE_NAME = "elaine-shadowing-studio-v38";
 
 const APP_SHELL = [
   "./",
@@ -31,7 +31,7 @@ const APP_SHELL = [
   "courses/voa/course.json",
   "courses/friends/course.json",
   "courses/ted/course.json",
-  "courses/shunbin-august-2026/course.json?v=37"
+  "courses/shunbin-august-2026/course.json?v=38"
 ];
 
 self.addEventListener("install", (event) => {
