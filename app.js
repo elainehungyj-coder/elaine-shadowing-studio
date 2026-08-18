@@ -36,6 +36,8 @@ const els = {
   searchFeedback: document.querySelector("#searchFeedback"),
   searchStatus: document.querySelector("#searchStatus"),
   searchResults: document.querySelector("#searchResults"),
+  studyFilter: document.querySelector("#studyFilter"),
+  filterStatus: document.querySelector("#filterStatus"),
   sentenceJump: document.querySelector("#sentenceJump"),
   sentenceTotal: document.querySelector("#sentenceTotal"),
   masteredCount: document.querySelector("#masteredCount"),
@@ -78,6 +80,7 @@ const state = {
   timerId: 0,
   compareAbort: false,
   compareRunning: false,
+  studyFilter: "all",
   storage: loadStorage()
 };
 
@@ -142,6 +145,9 @@ function bindEvents() {
   els.searchResults.addEventListener("change", (event) => {
     goToSentence(Number(event.target.value));
   });
+  els.studyFilter.addEventListener("change", (event) => {
+    applyStudyFilter(event.target.value);
+  });
 
   els.rate06Button.addEventListener("click", () => setPlaybackRate(0.6));
   els.rate075Button.addEventListener("click", () => setPlaybackRate(0.75));
@@ -172,8 +178,8 @@ function bindEvents() {
     applyPreferences();
   });
 
-  els.prevButton.addEventListener("click", () => goToSentence(state.index - 1));
-  els.nextButton.addEventListener("click", () => goToSentence(state.index + 1));
+  els.prevButton.addEventListener("click", () => goToAdjacentSentence(-1));
+  els.nextButton.addEventListener("click", () => goToAdjacentSentence(1));
   els.playButton.addEventListener("click", () => playCurrentSentence());
   els.stopButton.addEventListener("click", () => stopPlayback());
   els.favoriteButton.addEventListener("click", () => toggleSentenceState("favorites"));
@@ -197,11 +203,13 @@ async function loadCourse(courseId, preferredIndex) {
   clearRecording();
   state.course = await response.json();
   state.courseId = meta.id;
+  state.studyFilter = "all";
   state.index = clamp(preferredIndex, 0, state.course.sentences.length - 1);
   state.storage.lastCourseId = state.courseId;
   state.storage.lastIndex = state.index;
   saveStorage();
   els.courseSelect.value = state.courseId;
+  renderStudyFilter();
   renderSentenceJumpOptions();
   clearSentenceSearch();
   updateLocation();
@@ -209,19 +217,58 @@ async function loadCourse(courseId, preferredIndex) {
 }
 
 function renderSentenceJumpOptions() {
-  const total = state.course?.sentences.length || 0;
-  els.sentenceJump.innerHTML = Array.from({ length: total }, (_, index) => {
+  const indexes = getStudyIndexes();
+  els.sentenceJump.innerHTML = indexes.map((index) => {
     const number = index + 1;
     return `<option value="${number}">${number}</option>`;
   }).join("");
-  els.sentenceTotal.textContent = `/ ${total} 句`;
+  els.sentenceJump.disabled = indexes.length === 0;
+  els.sentenceTotal.textContent = `/ ${indexes.length} 句`;
+}
+
+function getStudyIndexes() {
+  if (!state.course) return [];
+  const favorites = getStateSet("favorites");
+  const mastered = getStateSet("mastered");
+  return state.course.sentences.flatMap((sentence, index) => {
+    if (state.studyFilter === "favorites" && !favorites.has(sentence.id)) return [];
+    if (state.studyFilter === "unmastered" && mastered.has(sentence.id)) return [];
+    return [index];
+  });
+}
+
+function renderStudyFilter(message = "") {
+  const favorites = getStateSet("favorites").size;
+  const mastered = getStateSet("mastered").size;
+  const total = state.course?.sentences.length || 0;
+  els.studyFilter.value = state.studyFilter;
+  els.studyFilter.querySelector('option[value="all"]').textContent = `全部句子 (${total})`;
+  els.studyFilter.querySelector('option[value="unmastered"]').textContent = `未掌握 (${Math.max(total - mastered, 0)})`;
+  els.studyFilter.querySelector('option[value="favorites"]').textContent = `已收藏 (${favorites})`;
+  els.filterStatus.textContent = message;
+}
+
+function applyStudyFilter(filter) {
+  state.studyFilter = ["all", "unmastered", "favorites"].includes(filter) ? filter : "all";
+  let indexes = getStudyIndexes();
+  if (!indexes.length) {
+    state.studyFilter = "all";
+    indexes = getStudyIndexes();
+    renderStudyFilter("该分类暂时没有句子，已显示全部");
+  } else {
+    renderStudyFilter(`当前分类共 ${indexes.length} 句`);
+  }
+  renderSentenceJumpOptions();
+  clearSentenceSearch();
+  goToSentence(indexes.includes(state.index) ? state.index : indexes[0]);
 }
 
 function runSentenceSearch() {
   const query = els.sentenceSearch.value.trim().toLocaleLowerCase();
   if (!query || !state.course) return;
 
-  const matches = state.course.sentences.flatMap((sentence, index) => {
+  const matches = getStudyIndexes().flatMap((index) => {
+    const sentence = state.course.sentences[index];
     const searchable = [sentence.english, sentence.chinese, sentence.shadowing]
       .filter(Boolean)
       .join(" ")
@@ -276,8 +323,10 @@ function renderSentence() {
   els.masteredButton.classList.toggle("active", hasSentenceState("mastered"));
   els.favoriteButton.textContent = hasSentenceState("favorites") ? "已收藏" : "收藏";
   els.masteredButton.textContent = hasSentenceState("mastered") ? "已掌握" : "已掌握";
-  els.prevButton.disabled = state.index === 0;
-  els.nextButton.disabled = state.index === state.course.sentences.length - 1;
+  const studyIndexes = getStudyIndexes();
+  const studyPosition = studyIndexes.indexOf(state.index);
+  els.prevButton.disabled = studyPosition <= 0;
+  els.nextButton.disabled = studyPosition < 0 || studyPosition === studyIndexes.length - 1;
   els.playButton.disabled = !hasAudio;
   els.playButton.textContent = hasAudio ? "▶ 播放真人原声" : "本句无音频";
   els.stopButton.disabled = !hasAudio;
@@ -305,6 +354,13 @@ function goToSentence(index) {
   saveStorage();
   updateLocation();
   renderSentence();
+}
+
+function goToAdjacentSentence(direction) {
+  const indexes = getStudyIndexes();
+  const position = indexes.indexOf(state.index);
+  const target = indexes[position + direction];
+  if (target !== undefined) goToSentence(target);
 }
 
 function updateLocation() {
@@ -427,7 +483,16 @@ function toggleSentenceState(type) {
   }
   state.storage.courses[state.courseId][type] = [...set];
   saveStorage();
-  renderSentence();
+  const indexes = getStudyIndexes();
+  renderStudyFilter();
+  renderSentenceJumpOptions();
+  if (indexes.length && !indexes.includes(state.index)) {
+    goToSentence(indexes.find((index) => index > state.index) ?? indexes[indexes.length - 1]);
+  } else if (!indexes.length && state.studyFilter !== "all") {
+    applyStudyFilter("all");
+  } else {
+    renderSentence();
+  }
 }
 
 async function toggleRecording() {
