@@ -31,7 +31,13 @@ const els = {
   body: document.body,
   courseTitle: document.querySelector("#courseTitle"),
   courseSelect: document.querySelector("#courseSelect"),
-  sentenceCounter: document.querySelector("#sentenceCounter"),
+  sentenceSearch: document.querySelector("#sentenceSearch"),
+  searchButton: document.querySelector("#searchButton"),
+  searchFeedback: document.querySelector("#searchFeedback"),
+  searchStatus: document.querySelector("#searchStatus"),
+  searchResults: document.querySelector("#searchResults"),
+  sentenceJump: document.querySelector("#sentenceJump"),
+  sentenceTotal: document.querySelector("#sentenceTotal"),
   masteredCount: document.querySelector("#masteredCount"),
   courseProgress: document.querySelector("#courseProgress"),
   tagRow: document.querySelector("#tagRow"),
@@ -82,8 +88,20 @@ async function init() {
   restorePreferences();
   renderCourseOptions();
   bindEvents();
-  await loadCourse(state.storage.lastCourseId || "twilight-chapter-01", state.storage.lastIndex || 0);
+  const requested = getRequestedLocation();
+  await loadCourse(
+    requested.courseId || state.storage.lastCourseId || "twilight-chapter-01",
+    requested.index ?? state.storage.lastIndex ?? 0
+  );
   registerServiceWorker();
+}
+
+function getRequestedLocation() {
+  const params = new URLSearchParams(window.location.search);
+  const courseId = params.get("course") || "";
+  const sentenceNumber = Number(params.get("sentence"));
+  const index = Number.isInteger(sentenceNumber) && sentenceNumber > 0 ? sentenceNumber - 1 : null;
+  return { courseId, index };
 }
 
 async function loadCourseCatalog() {
@@ -108,6 +126,21 @@ function renderCourseOptions() {
 function bindEvents() {
   els.courseSelect.addEventListener("change", async (event) => {
     await loadCourse(event.target.value, 0);
+  });
+
+  els.sentenceJump.addEventListener("change", (event) => {
+    goToSentence(Number(event.target.value) - 1);
+  });
+
+  els.searchButton.addEventListener("click", runSentenceSearch);
+  els.sentenceSearch.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") runSentenceSearch();
+  });
+  els.sentenceSearch.addEventListener("input", () => {
+    if (!els.sentenceSearch.value.trim()) clearSentenceSearch();
+  });
+  els.searchResults.addEventListener("change", (event) => {
+    goToSentence(Number(event.target.value));
   });
 
   els.rate06Button.addEventListener("click", () => setPlaybackRate(0.6));
@@ -169,7 +202,55 @@ async function loadCourse(courseId, preferredIndex) {
   state.storage.lastIndex = state.index;
   saveStorage();
   els.courseSelect.value = state.courseId;
+  renderSentenceJumpOptions();
+  clearSentenceSearch();
+  updateLocation();
   renderSentence();
+}
+
+function renderSentenceJumpOptions() {
+  const total = state.course?.sentences.length || 0;
+  els.sentenceJump.innerHTML = Array.from({ length: total }, (_, index) => {
+    const number = index + 1;
+    return `<option value="${number}">${number}</option>`;
+  }).join("");
+  els.sentenceTotal.textContent = `/ ${total} 句`;
+}
+
+function runSentenceSearch() {
+  const query = els.sentenceSearch.value.trim().toLocaleLowerCase();
+  if (!query || !state.course) return;
+
+  const matches = state.course.sentences.flatMap((sentence, index) => {
+    const searchable = [sentence.english, sentence.chinese, sentence.shadowing]
+      .filter(Boolean)
+      .join(" ")
+      .toLocaleLowerCase();
+    return searchable.includes(query) ? [{ sentence, index }] : [];
+  });
+
+  els.searchFeedback.hidden = false;
+  if (!matches.length) {
+    els.searchStatus.textContent = "没有找到匹配句子";
+    els.searchResults.hidden = true;
+    return;
+  }
+
+  els.searchStatus.textContent = `找到 ${matches.length} 句`;
+  els.searchResults.hidden = false;
+  els.searchResults.innerHTML = matches.map(({ sentence, index }) => {
+    const preview = String(sentence.english || sentence.chinese || "").slice(0, 72);
+    return `<option value="${index}">${index + 1}. ${escapeHtml(preview)}</option>`;
+  }).join("");
+  els.searchResults.value = String(matches[0].index);
+  goToSentence(matches[0].index);
+}
+
+function clearSentenceSearch() {
+  els.sentenceSearch.value = "";
+  els.searchFeedback.hidden = true;
+  els.searchStatus.textContent = "";
+  els.searchResults.innerHTML = "";
 }
 
 function renderSentence() {
@@ -179,7 +260,7 @@ function renderSentence() {
 
   const progress = getCourseProgress();
   els.courseTitle.textContent = state.course.title;
-  els.sentenceCounter.textContent = `${state.index + 1} / ${state.course.sentences.length}`;
+  els.sentenceJump.value = String(state.index + 1);
   els.masteredCount.textContent = progress.mastered;
   els.courseProgress.value = progress.percent;
   els.englishText.textContent = sentence.english;
@@ -222,7 +303,15 @@ function goToSentence(index) {
   state.index = clamp(index, 0, state.course.sentences.length - 1);
   state.storage.lastIndex = state.index;
   saveStorage();
+  updateLocation();
   renderSentence();
+}
+
+function updateLocation() {
+  const url = new URL(window.location.href);
+  url.searchParams.set("course", state.courseId);
+  url.searchParams.set("sentence", String(state.index + 1));
+  history.replaceState(null, "", url);
 }
 
 async function playCurrentSentence() {

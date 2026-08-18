@@ -11,7 +11,7 @@
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png?v=12">
     <link rel="icon" href="assets/icons/icon-192.png?v=12" type="image/png">
-    <link rel="stylesheet" href="styles.css?v=41">
+    <link rel="stylesheet" href="styles.css?v=42">
   </head>
   <body>
     <div class="app-shell">
@@ -20,7 +20,11 @@
           <p class="eyebrow">Elaine Shadowing Studio</p>
           <h1 id="courseTitle">Shadowing</h1>
         </div>
-        <strong class="sentence-counter" id="sentenceCounter">1 / 1</strong>
+        <div class="sentence-jump">
+          <label for="sentenceJump">第</label>
+          <select id="sentenceJump" aria-label="跳到指定句"></select>
+          <span id="sentenceTotal">/ 1 句</span>
+        </div>
       </header>
 
       <main>
@@ -28,6 +32,15 @@
           <select id="courseSelect" aria-label="选择课程"></select>
           <button class="small-button" id="bigTextToggle" type="button">大字号</button>
         </section>
+
+        <section class="sentence-search" aria-label="搜索句子">
+          <input id="sentenceSearch" type="search" placeholder="输入英文或中文关键词" autocomplete="off">
+          <button id="searchButton" type="button">搜索</button>
+        </section>
+        <div class="search-feedback" id="searchFeedback" hidden>
+          <span id="searchStatus" aria-live="polite"></span>
+          <select id="searchResults" aria-label="选择搜索结果"></select>
+        </div>
 
         <section class="progress-panel" aria-label="学习进度">
           <progress id="courseProgress" value="0" max="100"></progress>
@@ -98,6 +111,6 @@
       <span class="vocab-pill"></span>
     </template>
 
-    <script src="app.js?v=41" type="module"></script>
+    <script src="app.js?v=42" type="module"></script>
   </body>
 </html>
