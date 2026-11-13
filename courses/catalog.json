@@ -1,6 +1,11 @@
 {
   "courses": [
     {
+      "id": "shunbin-2026-11-24",
+      "title": "11/24 會議跟讀",
+      "path": "courses/shunbin-2026-11-24/course.json"
+    },
+    {
       "id": "twilight-chapter-01",
       "title": "Twilight · Chapter 1",
       "path": "courses/twilight-chapter-01/course.json"
