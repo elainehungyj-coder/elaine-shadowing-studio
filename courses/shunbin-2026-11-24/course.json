@@ -134,18 +134,18 @@
     {
       "id": "shunbin-2026-11-24-015",
       "audioPath": "courses/shunbin-2026-11-24/audio/015.mp3",
-      "english": "As agreed previously, the product label will identify Kyoto Shimogamo Cosmetics Co., Ltd. as the Distributor, or hatsubaimoto.",
+      "english": "As agreed previously, the product label will identify Kyoto Shimogamo Cosmetics Co., Ltd. as the Distributor (発売元).",
       "chinese": "如先前協議，產品標籤將標示京都下鴨化粧品有限公司為發售元（発売元）。",
-      "shadowing": "As‿aGREED PREviously, / the PRODUCT LABEL will iDENtify / Kyoto Shimogamo Cosmetics Co., Ltd. / as‿the disTRIButor, / or hatsubaimoto. ↘",
+      "shadowing": "As‿aGREED PREviously, / the PRODUCT LABEL will iDENtify / Kyoto Shimogamo Cosmetics Co., Ltd. / as‿the disTRIButor. ↘",
       "tags": ["label", "legal"],
       "vocabulary": []
     },
     {
       "id": "shunbin-2026-11-24-016",
       "audioPath": "courses/shunbin-2026-11-24/audio/016.mp3",
-      "english": "Logic Co., Ltd., or Kabushiki Kaisha Logic, will be identified as the Manufacturing and Marketing Authorization Holder, or seizo hanbai moto.",
-      "chinese": "Logic Co., Ltd.（株式会社ロジック）將標示為製造販売元，也就是製造販售業者。",
-      "shadowing": "Logic Co., Ltd., / or Kabushiki Kaisha Logic, / will be iDENtified as‿the Manufacturing and Marketing Authorization Holder, / or seizo hanbai moto. ↘",
+      "english": "Logic Co., Ltd. (株式会社ロジック) will be identified as the Manufacturing and Marketing Authorization Holder (製造販売元).",
+      "chinese": "Logic Co., Ltd.（株式会社ロジック）將標示為製造販売元（製造販售業者）。",
+      "shadowing": "Logic Co., Ltd. / will be iDENtified as‿the Manufacturing and Marketing Authorization Holder. ↘",
       "tags": ["label", "legal"],
       "vocabulary": []
     },
