@@ -132,6 +132,24 @@
       "vocabulary": []
     },
     {
+      "id": "shunbin-2026-11-24-041",
+      "audioPath": "courses/shunbin-2026-11-24/audio/041.mp3",
+      "english": "Human testing and sensitization testing should be discussed separately, as some sensitization tests may not involve human participants.",
+      "chinese": "人體測試與致敏性測試應分開討論，因為有些致敏性測試可能不涉及人體受試者。",
+      "shadowing": "HUMAN TESTING / and sensitiZAtion TESTING / should be disCUSSED SEParately, / as some sensitiZAtion TESTS / may not involve HUMAN parTIcipants. ↘",
+      "tags": ["human testing", "sensitization testing"],
+      "vocabulary": []
+    },
+    {
+      "id": "shunbin-2026-11-24-042",
+      "audioPath": "courses/shunbin-2026-11-24/audio/042.mp3",
+      "english": "Could you please share how Logic has carried out these tests for previous clients or for your own products? We would like to understand the testing methods, the number of participants, the testing period, and other details.",
+      "chinese": "請問 Logic 過去為其他客戶或自有產品是如何進行這些測試的？我們想了解測試方法、受試者人數、測試期間及其他細節。",
+      "shadowing": "Could you please SHARE / how Logic has carried OUT these TESTS / for PREvious CLIENTS / or for your own PRODUCTS? / We would LIKE to underSTAND / the TESTING METHODS, / the NUMBER of parTIcipants, / the TESTING PERIOD, / and OTHER DETAILS. ↗↘",
+      "tags": ["testing methods", "participants"],
+      "vocabulary": []
+    },
+    {
       "id": "shunbin-2026-11-24-015",
       "audioPath": "courses/shunbin-2026-11-24/audio/015.mp3",
       "english": "As agreed previously, the product label will identify Kyoto Shimogamo Cosmetics Co., Ltd. as the Distributor (発売元).",
