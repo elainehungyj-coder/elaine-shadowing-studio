@@ -1,387 +1,48 @@
 {
-  "id": "shunbin-2026-11-24",
-  "title": "11/24 會議跟讀",
-  "description": "Shunbin／Logic／Lily Lab 會議重點，含 Jessica 美式商務英語逐句原聲。",
-  "sourceType": "elevenlabs-jessica-meeting-voice",
-  "audioPattern": "courses/shunbin-2026-11-24/audio/{index}.mp3",
-  "sentences": [
-    {
-      "id": "shunbin-2026-11-24-001",
-      "audioPath": "courses/shunbin-2026-11-24/audio/001.mp3",
-      "english": "We think the patented ingredients and the other points in the proposal are all very good.",
-      "chinese": "我們認為，提案中的專利成分及其他重點都非常好。",
-      "shadowing": "We think‿the PATENTED INGREDIENTS / and‿the OTHER POINTS in‿the PROPOSAL / are all very GOOD. ↘",
-      "tags": ["formula", "proposal"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-002",
-      "audioPath": "courses/shunbin-2026-11-24/audio/002.mp3",
-      "english": "However, when all the ingredients are mixed together, we are concerned that they may affect each other.",
-      "chinese": "不過，當所有成分混合在一起時，我們擔心它們之間可能會互相影響。",
-      "shadowing": "However, / when all‿the INGREDIENTS are mixed together, / we‿are concerned / that they may AFFECT each‿other. ↘",
-      "tags": ["formula", "concern"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-003",
-      "audioPath": "courses/shunbin-2026-11-24/audio/003.mp3",
-      "english": "For this reason, thorough stability testing of the final formula must be completed before launch.",
-      "chinese": "因此，最終配方必須在上市前完成完整的穩定性測試。",
-      "shadowing": "For this REASON, / thorough STABILITY TESTING / of‿the FINAL FORMULA / must be COMPLETED before LAUNCH. ↘",
-      "tags": ["stability testing", "launch"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-004",
-      "audioPath": "courses/shunbin-2026-11-24/audio/004.mp3",
-      "english": "This is essential to ensure product quality.",
-      "chinese": "這對確保產品品質至關重要。",
-      "shadowing": "This is esSENTIAL / to ensure PRODUCT QUALITY. ↘",
-      "tags": ["quality"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-005",
-      "audioPath": "courses/shunbin-2026-11-24/audio/005.mp3",
-      "english": "For example, the products will mainly be sold in hot-climate markets, such as Malaysia and Taiwan.",
-      "chinese": "例如，這些產品主要會在馬來西亞、台灣等炎熱氣候市場販售。",
-      "shadowing": "For exAMPLE, / the PRODUCTS will mainly be SOLD / in HOT-CLIMATE MARKETS, / such as MaLAYsia and TaiWAN. ↘",
-      "tags": ["market", "climate"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-006",
-      "audioPath": "courses/shunbin-2026-11-24/audio/006.mp3",
-      "english": "The temperature test should cover at least 3°C to 50°C.",
-      "chinese": "溫度測試的範圍至少應涵蓋 3°C 至 50°C。",
-      "shadowing": "The TEMPERATURE TEST / should COVER at LEAST / three degrees to FIFTY degrees Celsius. ↘",
-      "tags": ["testing", "temperature"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-007",
-      "audioPath": "courses/shunbin-2026-11-24/audio/007.mp3",
-      "english": "Could you please advise us which stability tests can be accelerated and which cannot?",
-      "chinese": "請問哪些穩定性測試可以加速進行，哪些則不行？",
-      "shadowing": "Could you please adVISE us / which STABILITY TESTS can be acCELerated / and which CANNOT? ↗",
-      "tags": ["stability testing", "question"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-008",
-      "audioPath": "courses/shunbin-2026-11-24/audio/008.mp3",
-      "english": "Some accelerated test results may look good, but they may not fully show how the product performs in daily use.",
-      "chinese": "有些加速測試結果看起來可能很好，但未必能完全反映產品在日常使用中的表現。",
-      "shadowing": "Some acCELerated TEST RESULTS / may LOOK GOOD, / but they may not fully SHOW / how‿the PRODUCT performs / in DAILY USE. ↘",
-      "tags": ["testing", "daily use"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-009",
-      "audioPath": "courses/shunbin-2026-11-24/audio/009.mp3",
-      "english": "Another important point is skin sensitization testing.",
-      "chinese": "另一項重要重點是皮膚致敏性測試。",
-      "shadowing": "Another imPORTANT POINT / is SKIN SENSITIZATION TESTING. ↘",
-      "tags": ["safety testing"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-010",
-      "audioPath": "courses/shunbin-2026-11-24/audio/010.mp3",
-      "english": "Cynthia had an allergic reaction before, and many people today have sensitive skin because of modern urban life.",
-      "chinese": "Cynthia 之前曾出現過敏反應，而現代都市生活也讓許多人有敏感性肌膚。",
-      "shadowing": "Cynthia had‿an alLERgic reACTION before, / and MANY PEOPLE today / have SENSITIVE SKIN / because‿of MODERN URBAN LIFE. ↘",
-      "tags": ["sensitive skin", "safety"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-011",
-      "audioPath": "courses/shunbin-2026-11-24/audio/011.mp3",
-      "english": "Our upgraded products are meant to help people feel physically and mentally balanced in a fast-paced, high-pressure life.",
-      "chinese": "我們升級後的產品，是希望幫助人們在快節奏、高壓力的生活中維持身心平衡。",
-      "shadowing": "Our upGRADED PRODUCTS / are meant to HELP PEOPLE feel / PHYSically and MENtally BALANCED / in‿a FAST-PACED, HIGH-PRESSURE LIFE. ↘",
-      "tags": ["product value", "well-being"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-012",
-      "audioPath": "courses/shunbin-2026-11-24/audio/012.mp3",
-      "english": "For this reason, we cannot accept allergic symptoms after use.",
-      "chinese": "因此，我們不能接受使用後出現過敏症狀。",
-      "shadowing": "For this REASON, / we CANNOT accept / alLERgic SYMPTOMS after USE. ↘",
-      "tags": ["safety", "requirement"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-013",
-      "audioPath": "courses/shunbin-2026-11-24/audio/013.mp3",
-      "english": "This would seriously damage consumer trust in the product.",
-      "chinese": "這會嚴重損害消費者對產品的信任。",
-      "shadowing": "This would SEriously DAMAGE / consumer TRUST in‿the PRODUCT. ↘",
-      "tags": ["consumer trust"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-014",
-      "audioPath": "courses/shunbin-2026-11-24/audio/014.mp3",
-      "english": "Please treat this as a key requirement before launch.",
-      "chinese": "請將此視為產品上市前的關鍵要求。",
-      "shadowing": "Please TREAT this / as‿a KEY reQUIREMENT / before LAUNCH. ↘",
-      "tags": ["requirement", "launch"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-041",
-      "audioPath": "courses/shunbin-2026-11-24/audio/041.mp3",
-      "english": "Human testing and sensitization testing should be discussed separately, as some sensitization tests may not involve human participants.",
-      "chinese": "人體測試與致敏性測試應分開討論，因為有些致敏性測試可能不涉及人體受試者。",
-      "shadowing": "HUMAN TESTING / and sensitiZAtion TESTING / should be disCUSSED SEParately, / as some sensitiZAtion TESTS / may not involve HUMAN parTIcipants. ↘",
-      "tags": ["human testing", "sensitization testing"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-042",
-      "audioPath": "courses/shunbin-2026-11-24/audio/042.mp3",
-      "english": "Could you please share how Logic has carried out these tests for previous clients or for your own products? We would like to understand the testing methods, the number of participants, the testing period, and other details.",
-      "chinese": "請問 Logic 過去為其他客戶或自有產品是如何進行這些測試的？我們想了解測試方法、受試者人數、測試期間及其他細節。",
-      "shadowing": "Could you please SHARE / how Logic has carried OUT these TESTS / for PREvious CLIENTS / or for your own PRODUCTS? / We would LIKE to underSTAND / the TESTING METHODS, / the NUMBER of parTIcipants, / the TESTING PERIOD, / and OTHER DETAILS. ↗↘",
-      "tags": ["testing methods", "participants"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-015",
-      "audioPath": "courses/shunbin-2026-11-24/audio/015.mp3",
-      "english": "As agreed previously, the product label will identify Kyoto Shimogamo Cosmetics Co., Ltd. as the Distributor (発売元).",
-      "chinese": "如先前協議，產品標籤將標示京都下鴨化粧品有限公司為發售元（発売元）。",
-      "shadowing": "As‿aGREED PREviously, / the PRODUCT LABEL will iDENtify / Kyoto Shimogamo Cosmetics Co., Ltd. / as‿the disTRIButor. ↘",
-      "tags": ["label", "legal"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-016",
-      "audioPath": "courses/shunbin-2026-11-24/audio/016.mp3",
-      "english": "Logic Co., Ltd. (株式会社ロジック) will be identified as the Manufacturing and Marketing Authorization Holder (製造販売元).",
-      "chinese": "Logic Co., Ltd.（株式会社ロジック）將標示為製造販売元（製造販售業者）。",
-      "shadowing": "Logic Co., Ltd. / will be iDENtified as‿the Manufacturing and Marketing Authorization Holder. ↘",
-      "tags": ["label", "legal"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-017",
-      "audioPath": "courses/shunbin-2026-11-24/audio/017.mp3",
-      "english": "The product barcode will also need to be arranged as part of this work.",
-      "chinese": "產品條碼也需要作為這項工作的一部分安排完成。",
-      "shadowing": "The PRODUCT BARCODE / will also need to be arRANGED / as PART of this WORK. ↘",
-      "tags": ["barcode", "project scope"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-018",
-      "audioPath": "courses/shunbin-2026-11-24/audio/018.mp3",
-      "english": "We propose handling this as a separate project, with a separate fee.",
-      "chinese": "我們建議將此作為獨立專案處理，並另行收費。",
-      "shadowing": "We proPOSE HANDLING this / as‿a SEParate PROJECT, / with‿a SEParate FEE. ↘",
-      "tags": ["project scope", "fee"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-019",
-      "audioPath": "courses/shunbin-2026-11-24/audio/019.mp3",
-      "english": "Could you please share your view?",
-      "chinese": "請問你們的看法是什麼？",
-      "shadowing": "Could you please SHARE your VIEW? ↗",
-      "tags": ["question"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-020",
-      "audioPath": "courses/shunbin-2026-11-24/audio/020.mp3",
-      "english": "As we discussed before, we understand that many steps take time.",
-      "chinese": "如同我們之前討論的，我們理解許多步驟都需要時間。",
-      "shadowing": "As we disCUSSED before, / we underSTAND / that MANY STEPS take TIME. ↘",
-      "tags": ["schedule"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-021",
-      "audioPath": "courses/shunbin-2026-11-24/audio/021.mp3",
-      "english": "In the best case, we expect to complete manufacturing in April or May 2027 and launch the product in May or June.",
-      "chinese": "在最理想的情況下，我們預計於 2027 年 4 月或 5 月完成生產，並於 5 月或 6 月上市。",
-      "shadowing": "In‿the BEST CASE, / we expect to complete MANUFACTURING / in APRIL or MAY twenty twenty-seven, / and LAUNCH the PRODUCT / in MAY or JUNE. ↘",
-      "tags": ["schedule", "launch"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-022",
-      "audioPath": "courses/shunbin-2026-11-24/audio/022.mp3",
-      "english": "This would give us a longer selling period during the hot season, from May to October.",
-      "chinese": "這樣可以讓我們在炎熱季節，也就是從 5 月到 10 月，擁有更長的銷售期。",
-      "shadowing": "This would GIVE us / a LONGER SELLING PERIOD / during‿the HOT SEASON, / from MAY to OcTOBER. ↘",
-      "tags": ["sales", "season"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-023",
-      "audioPath": "courses/shunbin-2026-11-24/audio/023.mp3",
-      "english": "It would also better meet seasonal market demand.",
-      "chinese": "這也能更好地滿足季節性的市場需求。",
-      "shadowing": "It would also BETTER MEET / SEASONAL MARKET deMAND. ↘",
-      "tags": ["market", "season"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-024",
-      "audioPath": "courses/shunbin-2026-11-24/audio/024.mp3",
-      "english": "We hope all three parties can work toward this schedule together.",
-      "chinese": "我們希望三方能共同朝這個時程努力。",
-      "shadowing": "We HOPE / all THREE PARTIES can WORK / toward this SCHEDULE toGETHER. ↘",
-      "tags": ["schedule", "collaboration"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-025",
-      "audioPath": "courses/shunbin-2026-11-24/audio/025.mp3",
-      "english": "For the upgraded product, we will use the retail prices of the two SHIRO benchmark products as our pricing reference.",
-      "chinese": "針對升級後的產品，我們會以兩款 SHIRO 標竿產品的零售價格作為定價參考。",
-      "shadowing": "For‿the upGRADED PRODUCT, / we will USE the RETAIL PRICES / of‿the two SHIRO BENCHMARK PRODUCTS / as‿our PRICING REFERENCE. ↘",
-      "tags": ["pricing", "benchmark"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-026",
-      "audioPath": "courses/shunbin-2026-11-24/audio/026.mp3",
-      "english": "At the same time, please pay close attention to manufacturing costs and keep them under control.",
-      "chinese": "同時，請密切注意製造成本，並將成本控制在合理範圍內。",
-      "shadowing": "At‿the SAME TIME, / please pay CLOSE atTENTION / to MANUFACTURING COSTS / and keep them under conTROL. ↘",
-      "tags": ["cost", "manufacturing"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-027",
-      "audioPath": "courses/shunbin-2026-11-24/audio/027.mp3",
-      "english": "We hope the official website design can move forward as soon as possible.",
-      "chinese": "我們希望官方網站設計能盡快推進。",
-      "shadowing": "We HOPE / the ofFIcial WEBSITE DESIGN / can move FORWARD / as SOON as POSsible. ↘",
-      "tags": ["website", "design"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-028",
-      "audioPath": "courses/shunbin-2026-11-24/audio/028.mp3",
-      "english": "We hope Shunbin can help us register the following domains and manage the related website and hosting afterward.",
-      "chinese": "我們希望 Shunbin 能協助我們註冊下列網域，並在之後管理相關網站與主機服務。",
-      "shadowing": "We HOPE Shunbin can HELP us / reGISTER the FOLLOWING DOMAINS / and manage‿the reLATED WEBSITE and HOSTING / afterWARD. ↘",
-      "tags": ["domain", "hosting"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-029",
-      "audioPath": "courses/shunbin-2026-11-24/audio/029.mp3",
-      "english": "Please register lilylab.co.jp and arrange web hosting space for it.",
-      "chinese": "請註冊 lilylab.co.jp，並為它安排網站主機空間。",
-      "shadowing": "Please reGISTER lilylab.co.jp / and arRANGE WEB HOSTING SPACE / for‿it. ↘",
-      "tags": ["domain", "hosting"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-030",
-      "audioPath": "courses/shunbin-2026-11-24/audio/030.mp3",
-      "english": "This will be our main domain.",
-      "chinese": "這將是我們的主要網域。",
-      "shadowing": "This will be‿our MAIN DOMAIN. ↘",
-      "tags": ["domain"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-031",
-      "audioPath": "courses/shunbin-2026-11-24/audio/031.mp3",
-      "english": "Please register lilylabo.jp and redirect it to lilylab.co.jp.",
-      "chinese": "請註冊 lilylabo.jp，並將它重新導向至 lilylab.co.jp。",
-      "shadowing": "Please reGISTER lilylabo.jp / and reDIRECT it / to lilylab.co.jp. ↘",
-      "tags": ["domain", "redirect"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-032",
-      "audioPath": "courses/shunbin-2026-11-24/audio/032.mp3",
-      "english": "Please register lily-labo.com and redirect it to lilylab.co.jp.",
-      "chinese": "請註冊 lily-labo.com，並將它重新導向至 lilylab.co.jp。",
-      "shadowing": "Please reGISTER lily-labo.com / and reDIRECT it / to lilylab.co.jp. ↘",
-      "tags": ["domain", "redirect"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-033",
-      "audioPath": "courses/shunbin-2026-11-24/audio/033.mp3",
-      "english": "Now that the formula is almost complete, we hope Shunbin can begin the market research.",
-      "chinese": "既然配方已接近完成，我們希望 Shunbin 可以開始進行市場調查。",
-      "shadowing": "Now that‿the FORMULA is almost comPLETE, / we HOPE Shunbin can begin / the MARKET RESEARCH. ↘",
-      "tags": ["market research", "formula"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-034",
-      "audioPath": "courses/shunbin-2026-11-24/audio/034.mp3",
-      "english": "Before starting, we need to define the brand story and the product's core functional value.",
-      "chinese": "在開始前，我們需要先定義品牌故事與產品的核心機能價值。",
-      "shadowing": "Before STARTING, / we need to deFINE / the BRAND STORY / and‿the PRODUCT'S CORE FUNCTIONAL VALUE. ↘",
-      "tags": ["brand", "market research"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-035",
-      "audioPath": "courses/shunbin-2026-11-24/audio/035.mp3",
-      "english": "This will give the research a clear framework and direction.",
-      "chinese": "這將為市場調查提供清晰的架構與方向。",
-      "shadowing": "This will GIVE the RESEARCH / a CLEAR FRAMEWORK and diRECTION. ↘",
-      "tags": ["market research"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-036",
-      "audioPath": "courses/shunbin-2026-11-24/audio/036.mp3",
-      "english": "Without these points, the market research will have no clear focus.",
-      "chinese": "如果缺少這些要點，市場調查就不會有清楚的焦點。",
-      "shadowing": "WithOUT these POINTS, / the MARKET RESEARCH will have / no CLEAR FOCUS. ↘",
-      "tags": ["market research"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-037",
-      "audioPath": "courses/shunbin-2026-11-24/audio/037.mp3",
-      "english": "It will be difficult to understand whether consumers need this product and whether it has potential in the market.",
-      "chinese": "我們將難以了解消費者是否需要這項產品，以及它是否具備市場潛力。",
-      "shadowing": "It will be DIFFicult to underSTAND / whether conSUMERS need this PRODUCT / and whether‿it has poTENtial / in‿the MARKET. ↘",
-      "tags": ["consumer need", "market research"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-038",
-      "audioPath": "courses/shunbin-2026-11-24/audio/038.mp3",
-      "english": "Could you please explain how retail shops, such as select shops, can collect customer contact details for follow-up on LINE?",
-      "chinese": "請問零售店鋪，例如選品店，可以如何蒐集顧客聯絡資料，以便後續透過 LINE 追蹤聯繫？",
-      "shadowing": "Could you please exPLAIN / how RETAIL SHOPS, / such as seLECT SHOPS, / can colLECT CUSTOMER CONTACT DETAILS / for FOLLOW-UP on LINE? ↗",
-      "tags": ["retail", "LINE"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-039",
-      "audioPath": "courses/shunbin-2026-11-24/audio/039.mp3",
-      "english": "We would also like to understand what will be included in the short and beautiful letter after purchase.",
-      "chinese": "我們也想了解購買後附上的「簡短而美好的信」會包含哪些內容。",
-      "shadowing": "We would also LIKE to underSTAND / what will be inCLUDED / in‿the short and BEAUTiful LETTER / after PURchase. ↘",
-      "tags": ["customer experience"],
-      "vocabulary": []
-    },
-    {
-      "id": "shunbin-2026-11-24-040",
-      "audioPath": "courses/shunbin-2026-11-24/audio/040.mp3",
-      "english": "Finally, could you please confirm whether the correct term is 24 solar terms, rather than 14 solar terms?",
-      "chinese": "最後，請確認正確的說法是否為「二十四節氣」，而不是「十四節氣」？",
-      "shadowing": "FI-nally, / could you please conFIRM / whether‿the correct TERM is / twenty-four SOLAR TERMS, / rather than fourteen SOLAR TERMS? ↗",
-      "tags": ["content check"],
-      "vocabulary": []
-    }
+  "id":"shunbin-2026-11-24","title":"11/24 會議跟讀","description":"Shunbin／Logic／Lily Lab 會議重點，含 Jessica 美式商務英語逐句原聲。","sourceType":"elevenlabs-jessica-meeting-voice","audioPattern":"courses/shunbin-2026-11-24/audio/{index}.mp3",
+  "sentences":[
+    {"id":"shunbin-2026-11-24-001","audioPath":"courses/shunbin-2026-11-24/audio/revised-20261119/001.mp3","english":"We will take the samples back for several days of testing with several users, and then share our feedback with you.","chinese":"我們會把樣品帶回，讓多位使用者進行數天測試，再與你們分享回饋。","shadowing":"We will TAKE the SAMPLES BACK / for several DAYS of TESTING / with several USERS, / and then SHARE our FEEDBACK with YOU. ↘"},
+    {"id":"shunbin-2026-11-24-002","audioPath":"courses/shunbin-2026-11-24/audio/revised-20261119/002.mp3","english":"Once all the ingredients are mixed, we need to make sure the formula goes through thorough stability testing.","chinese":"所有成分混合後，我們必須確保配方完成完整的穩定性測試。","shadowing":"Once all‿the INGREDIENTS are MIXED, / we need to make SURE / the FORMULA goes through / thorough STABILITY TESTING. ↘"},
+    {"id":"shunbin-2026-11-24-003","audioPath":"courses/shunbin-2026-11-24/audio/revised-20261119/003.mp3","english":"For example, for temperature testing, since the upgraded products will mainly be sold in tropical and subtropical markets such as Malaysia and Taiwan, the test range should cover at least 3°C to 50°C.","chinese":"例如，溫度測試方面，由於升級產品主要將在馬來西亞、台灣等熱帶與亞熱帶市場販售，測試範圍至少應涵蓋 3°C 至 50°C。","shadowing":"For exAMPLE, / for TEMPERATURE TESTING, / since‿the upGRADED PRODUCTS will mainly be SOLD / in TROPical and subTROPical MARKETS / such as MaLAYsia and TaiWAN, / the TEST RANGE should COVER / at least THREE deGREES to FIFTY deGREES Celsius. ↘"},
+    {"id":"shunbin-2026-11-24-004","audioPath":"courses/shunbin-2026-11-24/audio/revised-20261119/004.mp3","english":"Could you please advise us which stability tests can be accelerated and which cannot? Some accelerated test results may look good, but they may not fully show how the product performs in daily use.","chinese":"請問哪些穩定性測試可以加速進行、哪些不行？有些加速測試結果看起來可能很好，但未必能完全反映產品在日常使用中的表現。","shadowing":"Could you please adVISE us / which STABILITY TESTS can be acCELerated / and which CANNOT? / Some acCELerated TEST RESULTS may LOOK GOOD, / but they may not fully SHOW how‿the PRODUCT performs in DAILY USE. ↗↘"},
+    {"id":"shunbin-2026-11-24-005","audioPath":"courses/shunbin-2026-11-24/audio/009.mp3","english":"Another important point is skin sensitization testing.","chinese":"另一項重要重點是皮膚致敏性測試。","shadowing":"Another imPORTANT POINT / is SKIN SENSITIZATION TESTING. ↘"},
+    {"id":"shunbin-2026-11-24-006","audioPath":"courses/shunbin-2026-11-24/audio/revised-20261119/005.mp3","english":"Many people today have sensitive skin because of modern urban life.","chinese":"現代都市生活使許多人有敏感性肌膚。","shadowing":"MANY PEOPLE today / have SENSITIVE SKIN / because‿of MODERN URBAN LIFE. ↘"},
+    {"id":"shunbin-2026-11-24-007","audioPath":"courses/shunbin-2026-11-24/audio/011.mp3","english":"Our upgraded products are meant to help people feel physically and mentally balanced in a fast-paced, high-pressure life.","chinese":"我們升級後的產品，是希望幫助人們在快節奏、高壓力的生活中維持身心平衡。","shadowing":"Our upGRADED PRODUCTS / are meant to HELP PEOPLE feel / PHYSically and MENtally BALANCED / in‿a FAST-PACED, HIGH-PRESSURE LIFE. ↘"},
+    {"id":"shunbin-2026-11-24-008","audioPath":"courses/shunbin-2026-11-24/audio/012.mp3","english":"For this reason, we cannot accept allergic symptoms after use.","chinese":"因此，我們不能接受使用後出現過敏症狀。","shadowing":"For this REASON, / we CANNOT accept / alLERgic SYMPTOMS after USE. ↘"},
+    {"id":"shunbin-2026-11-24-009","audioPath":"courses/shunbin-2026-11-24/audio/013.mp3","english":"This would seriously damage consumer trust in the product.","chinese":"這會嚴重損害消費者對產品的信任。","shadowing":"This would SEriously DAMAGE / consumer TRUST in‿the PRODUCT. ↘"},
+    {"id":"shunbin-2026-11-24-010","audioPath":"courses/shunbin-2026-11-24/audio/revised-20261119/006.mp3","english":"First, before we can assess this further, we would like to ask for the following information.","chinese":"首先，在進一步評估前，我們想請教以下資訊。","shadowing":"FIRST, / before we can asSESS this FURther, / we would LIKE to ASK / for‿the FOLLOWING inforMAtion. ↘"},
+    {"id":"shunbin-2026-11-24-011","audioPath":"courses/shunbin-2026-11-24/audio/revised-20261119/007.mp3","english":"What expiry date can be printed on the packaging for the two upgraded products?","chinese":"兩款升級產品的包裝可印製的有效期限是多久？","shadowing":"What exPIRY DATE / can be PRINTED on‿the PACKaging / for‿the TWO upGRADED PRODUCTS? ↗"},
+    {"id":"shunbin-2026-11-24-012","audioPath":"courses/shunbin-2026-11-24/audio/revised-20261119/008.mp3","english":"What are the tank sizes, in kilograms, at the partner factory for making the mist and lotion?","chinese":"合作工廠生產噴霧與乳液所使用的 tank 容量各為多少公斤？","shadowing":"What are‿the TANK SIZES, / in KILOgrams, / at‿the PARTNER FACTORY / for MAKING the MIST and LOTION? ↗"},
+    {"id":"shunbin-2026-11-24-013","audioPath":"courses/shunbin-2026-11-24/audio/revised-20261119/009.mp3","english":"Assuming a 50-milliliter bottle for both the mist and the lotion, what would the MOQ (Minimum Order Quantity) be for each?","chinese":"若噴霧與乳液均以 50 毫升瓶裝計算，各自的 MOQ（最低訂購量）是多少？","shadowing":"AsSUMING a FIFTY-milliliter BOTTLE / for BOTH the MIST and‿the LOTION, / what would‿the MOQ be for EACH? ↗"},
+    {"id":"shunbin-2026-11-24-014","audioPath":"courses/shunbin-2026-11-24/audio/revised-20261119/010.mp3","english":"What is the estimated cost at this stage, including manufacturing, packaging, and containers? Could you please provide a cost breakdown?","chinese":"目前估計成本是多少，包含製造、包裝與容器？請提供成本明細。","shadowing":"What is‿the EStimated COST at this STAGE, / inCLUDING manuFACTuring, PACKaging, and conTAINers? / Could you please provide a COST BREAKDOWN? ↗"},
+    {"id":"shunbin-2026-11-24-015","audioPath":"courses/shunbin-2026-11-24/audio/revised-20261119/011.mp3","english":"After one batch has been produced and delivered, what is the shortest time needed to take orders, produce, and deliver the next batch?","chinese":"一批產品生產並交貨後，接單、生產並交付下一批所需的最短時間是多久？","shadowing":"After ONE BATCH has been proDUCED and deLIVERED, / what is‿the SHORTest TIME needed / to take ORDERS, proDUCE, and deLIVER the NEXT BATCH? ↗"},
+    {"id":"shunbin-2026-11-24-016","audioPath":"courses/shunbin-2026-11-24/audio/revised-20261119/012.mp3","english":"Are there any restrictions on the ordering schedule?","chinese":"訂購時程是否有任何限制？","shadowing":"Are there ANY reSTRICtions / on‿the ORDERING SCHEDULE? ↗"},
+    {"id":"shunbin-2026-11-24-017","audioPath":"courses/shunbin-2026-11-24/audio/revised-20261119/013.mp3","english":"If the interval between batches is too long, we are concerned that it may affect continuous sales in the market.","chinese":"如果批次之間的間隔過長，我們擔心可能會影響市場銷售的連續性。","shadowing":"If‿the INterval between BATCHES is too LONG, / we‿are conCERNED that‿it may afFECT / conTINuous SALES in‿the MARKET. ↘"},
+    {"id":"shunbin-2026-11-24-018","audioPath":"courses/shunbin-2026-11-24/audio/revised-20261119/014.mp3","english":"This will depend on how long the tests mentioned in the first item will take.","chinese":"這將取決於第一項所提及的各項測試需要多久。","shadowing":"This will dePEND / on how LONG the TESTS mentioned in‿the FIRST ITEM will TAKE. ↘"},
+    {"id":"shunbin-2026-11-24-019","audioPath":"courses/shunbin-2026-11-24/audio/revised-20261119/015.mp3","english":"As we have mentioned several times before, we understand that many steps take time.","chinese":"如同我們先前多次提到的，我們理解許多步驟都需要時間。","shadowing":"As we have MENtioned several TIMES beFORE, / we underSTAND that MANY STEPS take TIME. ↘"},
+    {"id":"shunbin-2026-11-24-020","audioPath":"courses/shunbin-2026-11-24/audio/021.mp3","english":"In the best case, we expect to complete manufacturing in April or May 2027 and launch the product in May or June.","chinese":"在最理想的情況下，我們預計於 2027 年 4 月或 5 月完成生產，並於 5 月或 6 月上市。","shadowing":"In‿the BEST CASE, / we expect to complete MANUFACTURING / in APRIL or MAY twenty twenty-seven, / and LAUNCH the PRODUCT in MAY or JUNE. ↘"},
+    {"id":"shunbin-2026-11-24-021","audioPath":"courses/shunbin-2026-11-24/audio/revised-20261119/016.mp3","english":"This would give us a longer selling period during the hot season, from May to October, and would better meet seasonal market demand.","chinese":"這樣可讓我們在炎熱季節、即 5 月至 10 月間，擁有更長的銷售期，也能更好地滿足季節性的市場需求。","shadowing":"This would GIVE us a LONGER SELLING PERIOD / during‿the HOT SEASON, from MAY to OcTOBER, / and would BETTER MEET SEASONAL MARKET deMAND. ↘"},
+    {"id":"shunbin-2026-11-24-022","audioPath":"courses/shunbin-2026-11-24/audio/024.mp3","english":"We hope all three parties can work toward this schedule together.","chinese":"我們希望三方能共同朝這個時程努力。","shadowing":"We HOPE / all THREE PARTIES can WORK / toward this SCHEDULE toGETHER. ↘"},
+    {"id":"shunbin-2026-11-24-023","audioPath":"courses/shunbin-2026-11-24/audio/revised-20261119/017.mp3","english":"As agreed previously, the product label will identify Kyoto Shimogamo Cosmetics Co., Ltd. as the Distributor (発売元), and Logic Co., Ltd. (株式会社ロジック) as the Manufacturing and Marketing Authorization Holder (製造販売元).","chinese":"如先前協議，產品標籤將標示京都下鴨化粧品有限公司為發售元（発売元），Logic Co., Ltd.（株式会社ロジック）為製造販売元（製造販售業者）。","shadowing":"As‿aGREED PREviously, / the PRODUCT LABEL will iDENtify / Kyoto Shimogamo Cosmetics Co., Ltd. as‿the disTRIButor, / and Logic Co., Ltd. / as‿the Manufacturing and Marketing Authorization Holder. ↘"},
+    {"id":"shunbin-2026-11-24-024","audioPath":"courses/shunbin-2026-11-24/audio/017.mp3","english":"The product barcode will also need to be arranged as part of this work.","chinese":"產品條碼也需要作為這項工作的一部分安排完成。","shadowing":"The PRODUCT BARCODE / will also need to be arRANGED / as PART of this WORK. ↘"},
+    {"id":"shunbin-2026-11-24-025","audioPath":"courses/shunbin-2026-11-24/audio/revised-20261119/018.mp3","english":"We propose handling this as a separate project, with a separate fee. Could you please share your view?","chinese":"我們建議將此作為獨立專案處理，並另行收費。請問你們的看法是什麼？","shadowing":"We proPOSE HANDLING this / as‿a SEParate PROJECT, with‿a SEParate FEE. / Could you please SHARE your VIEW? ↘↗"},
+    {"id":"shunbin-2026-11-24-026","audioPath":"courses/shunbin-2026-11-24/audio/revised-20261119/019.mp3","english":"For the upgraded product, we will use the retail prices of the two SHIRO benchmark products as our pricing reference. At the same time, please pay close attention to manufacturing costs and keep them under control.","chinese":"針對升級後的產品，我們會以兩款 SHIRO 標竿產品的零售價格作為定價參考。同時，請密切注意製造成本並加以控制。","shadowing":"For‿the upGRADED PRODUCT, / we will USE the RETAIL PRICES / of‿the two SHIRO BENCHMARK PRODUCTS as‿our PRICING REFERENCE. / At‿the SAME TIME, please pay CLOSE atTENTION / to MANUFACTURING COSTS and keep them under conTROL. ↘"},
+    {"id":"shunbin-2026-11-24-027","audioPath":"courses/shunbin-2026-11-24/audio/revised-20261119/020.mp3","english":"As we mentioned in this morning’s meeting, we would of course like to begin production in April or May and launch in May or June. However, this will depend on when the final formula is confirmed, how long the required tests take, and when the official website and online store designs are completed.","chinese":"如同今早會議提到的，我們當然希望在 4 月或 5 月開始生產，並於 5 月或 6 月上市。不過，這將取決於最終配方確認時間、必要測試所需時間，以及官網與網路商店設計完成的時間。","shadowing":"As we MENtioned in this MORNING'S MEETING, / we would‿of COURSE like to begin proDUCTION in APRIL or MAY / and LAUNCH in MAY or JUNE. / However, this will dePEND on WHEN the FINAL FORMULA is conFIRMED, / how LONG the reQUIRED TESTS take, / and when‿the ofFIcial WEBSITE and ONLINE STORE DESIGNS are comPLETED. ↘"},
+    {"id":"shunbin-2026-11-24-028","audioPath":"courses/shunbin-2026-11-24/audio/028.mp3","english":"We hope Shunbin can help us register the following domains and manage the related website and hosting afterward.","chinese":"我們希望 Shunbin 能協助我們註冊下列網域，並在之後管理相關網站與主機服務。","shadowing":"We HOPE Shunbin can HELP us / reGISTER the FOLLOWING DOMAINS / and manage‿the reLATED WEBSITE and HOSTING afterWARD. ↘"},
+    {"id":"shunbin-2026-11-24-029","audioPath":"courses/shunbin-2026-11-24/audio/revised-20261119/021.mp3","english":"Logic will also be responsible for customer enquiries, order processing, and delivery arrangements. If needed, this can be supported by a specialist call center whose staff can provide customer service for the products of 10 to 20 different companies.","chinese":"Logic 也將負責客戶詢問、訂單處理與出貨安排。如有需要，可由專業電話客服中心支援，其人員可為 10 至 20 家不同公司的產品提供客服服務。","shadowing":"Logic will also be reSPONsible / for CUSTOMER enQUIRIES, ORDER PROCESSING, and deLIVERY arRANGEMENTS. / If NEEDED, this can be supPORTED / by‿a SPEcialist CALL CENTER / whose STAFF can provide CUSTOMER SERVICE / for‿the PRODUCTS of TEN to TWENTY different COMpanies. ↘"},
+    {"id":"shunbin-2026-11-24-030","audioPath":"courses/shunbin-2026-11-24/audio/revised-20261119/022.mp3","english":"Please register lilylab.co.jp and arrange web hosting space for it. This will be our main domain.","chinese":"請註冊 lilylab.co.jp 並安排網站主機空間。這將是我們的主要網域。","shadowing":"Please reGISTER lilylab.co.jp / and arRANGE WEB HOSTING SPACE for IT. / This will be‿our MAIN DOMAIN. ↘"},
+    {"id":"shunbin-2026-11-24-031","audioPath":"courses/shunbin-2026-11-24/audio/revised-20261119/023.mp3","english":"Please register lilylabo.jp and redirect it to lilylab.co.jp, or use it as the online store.","chinese":"請註冊 lilylabo.jp 並轉址至 lilylab.co.jp，或將其作為網路商店使用。","shadowing":"Please reGISTER lilylabo.jp / and reDIRECT it to lilylab.co.jp, / or USE it as‿the ONLINE STORE. ↘"},
+    {"id":"shunbin-2026-11-24-032","audioPath":"courses/shunbin-2026-11-24/audio/032.mp3","english":"Please register lily-labo.com and redirect it to lilylab.co.jp.","chinese":"請註冊 lily-labo.com 並轉址至 lilylab.co.jp。","shadowing":"Please reGISTER lily-labo.com / and reDIRECT it to lilylab.co.jp. ↘"},
+    {"id":"shunbin-2026-11-24-033","audioPath":"courses/shunbin-2026-11-24/audio/revised-20261119/024.mp3","english":"We believe the sales channels need to be in place before we start advertising and promotion. Otherwise, people may see the advertising but have nowhere to buy the product, so the advertising budget will be wasted.","chinese":"我們認為，在開始廣告與推廣前，銷售通路必須先到位。否則，人們可能看到廣告卻無處購買產品，廣告預算就會被浪費。","shadowing":"We beLIEVE / the SALES CHANNELS need to be in PLACE / before we START adVERtising and proMOtion. / Otherwise, PEOPLE may SEE the adVERtising / but have NOWHERE to BUY the PRODUCT, / so‿the adVERtising BUDGET will be WASTED. ↘"},
+    {"id":"shunbin-2026-11-24-034","audioPath":"courses/shunbin-2026-11-24/audio/revised-20261119/025.mp3","english":"We will need several ways for customers to buy: an online store; mail-order sales, where customers can call to place an order after seeing an advertisement or online information; select shops; and brick-and-mortar stores.","chinese":"我們需要提供數種購買方式：網路商店、通信販售、選品店及實體零售店。顧客看到廣告或網路資訊後，可透過電話下單。","shadowing":"We will NEED several WAYS for CUSTOMERS to BUY: / an ONLINE STORE; MAIL-ORDER SALES, / where CUSTOMERS can CALL to place‿an ORDER / after SEEING an adVERtisement or ONLINE inforMAtion; / seLECT SHOPS; and BRICK-and-MORTAR STORES. ↘"},
+    {"id":"shunbin-2026-11-24-035","audioPath":"courses/shunbin-2026-11-24/audio/revised-20261119/026.mp3","english":"Once these sales channels are ready, we can begin promotion and marketing. We will need Shunbin’s support with both the sales channels and advertising and marketing.","chinese":"這些銷售通路準備就緒後，我們便能開始推廣與行銷。我們需要 Shunbin 在銷售通路以及廣告行銷兩方面提供支援。","shadowing":"Once these SALES CHANNELS are READY, / we can begin proMOtion and MARketing. / We will NEED Shunbin's supPORT / with BOTH the SALES CHANNELS / and adVERtising and MARketing. ↘"},
+    {"id":"shunbin-2026-11-24-036","audioPath":"courses/shunbin-2026-11-24/audio/033.mp3","english":"Now that the formula is almost complete, we hope Shunbin can begin the market research.","chinese":"現在配方已大致完成，我們希望 Shunbin 可以開始進行市場調查。","shadowing":"Now that‿the FORMULA is almost comPLETE, / we HOPE Shunbin can beGIN the MARKET RESEARCH. ↘"},
+    {"id":"shunbin-2026-11-24-037","audioPath":"courses/shunbin-2026-11-24/audio/034.mp3","english":"Before starting, we need to define the brand story and the product’s core functional value.","chinese":"在開始之前，我們需要先定義品牌故事與產品的核心功能價值。","shadowing":"Before STARTING, / we need to deFINE the BRAND STORY / and‿the PRODUCT'S CORE FUNCTIONAL VALUE. ↘"},
+    {"id":"shunbin-2026-11-24-038","audioPath":"courses/shunbin-2026-11-24/audio/035.mp3","english":"This will give the research a clear framework and direction.","chinese":"這將為市場調查提供清楚的架構與方向。","shadowing":"This will GIVE the RESEARCH / a CLEAR FRAMEWORK and diRECTION. ↘"},
+    {"id":"shunbin-2026-11-24-039","audioPath":"courses/shunbin-2026-11-24/audio/036.mp3","english":"Without these points, the market research will have no clear focus.","chinese":"沒有這些基礎，市場調查將沒有明確焦點。","shadowing":"WithOUT these POINTS, / the MARKET RESEARCH will have NO CLEAR FOCUS. ↘"},
+    {"id":"shunbin-2026-11-24-040","audioPath":"courses/shunbin-2026-11-24/audio/037.mp3","english":"It will be difficult to understand whether consumers need this product and whether it has potential in the market.","chinese":"我們將難以了解消費者是否需要這項產品，以及它是否具備市場潛力。","shadowing":"It will be DIFFicult to underSTAND / whether conSUMERS need this PRODUCT / and whether‿it has poTENtial in‿the MARKET. ↘"},
+    {"id":"shunbin-2026-11-24-041","audioPath":"courses/shunbin-2026-11-24/audio/038.mp3","english":"Could you please explain how retail shops, such as select shops, can collect customer contact details for follow-up on LINE?","chinese":"請問零售店鋪，例如選品店，可以如何蒐集顧客聯絡資料，以便後續透過 LINE 追蹤聯繫？","shadowing":"Could you please exPLAIN / how RETAIL SHOPS, such as seLECT SHOPS, / can colLECT CUSTOMER CONTACT DETAILS / for FOLLOW-UP on LINE? ↗"},
+    {"id":"shunbin-2026-11-24-042","audioPath":"courses/shunbin-2026-11-24/audio/039.mp3","english":"We would also like to understand what will be included in the short and beautiful letter after purchase.","chinese":"我們也想了解購買後附上的「簡短而美好的信」會包含哪些內容。","shadowing":"We would also LIKE to underSTAND / what will be inCLUDED in‿the short and BEAUTiful LETTER / after PURchase. ↘"},
+    {"id":"shunbin-2026-11-24-043","audioPath":"courses/shunbin-2026-11-24/audio/040.mp3","english":"Finally, could you please confirm whether the correct term is 24 solar terms, rather than 14 solar terms?","chinese":"最後，請確認正確的說法是否為「二十四節氣」，而不是「十四節氣」？","shadowing":"FI-nally, / could you please conFIRM / whether‿the correct TERM is twenty-four SOLAR TERMS, / rather than fourteen SOLAR TERMS? ↗"}
   ]
 }
